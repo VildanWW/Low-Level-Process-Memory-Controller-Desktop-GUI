@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dllmain.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
+              "RelativeDocumentMoniker": "Core\\dllmain.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
+              "RelativeToolTip": "Core\\dllmain.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-15T11:29:27.339Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
