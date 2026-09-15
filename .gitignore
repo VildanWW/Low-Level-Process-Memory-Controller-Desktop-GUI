@@ -1,0 +1,46 @@
+# Скрытая папка настроек Visual Studio
+.vs/
+
+# Папки компиляции (временные файлы сборки)
+Debug/
+Release/
+x64/
+x86/
+
+# Базы данных IntelliSense и файлы макетов окон
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.suo
+*.user
+*.filters
+
+# Временные логи и рецепты компилятора
+*.log
+*.tlog
+*.recipe
+*.ilk
+*.pdb
+*.pch
+*.obj
+*.iobj
+*.ipdb
+
+# Файлы сборки MSBuild и вывода
+*.exe
+*.dll
+*.lib
+*.sln.docstates
+
+# Временные файлы прекомпилированных заголовков и архивов
+*.ipch
+*.aps
+*.ncb
+*.sdf
+
+# Папки сборки на любых уровнях вложенности
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
