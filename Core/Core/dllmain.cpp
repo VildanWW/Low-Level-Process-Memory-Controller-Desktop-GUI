@@ -2,23 +2,15 @@
 #include "pch.h"
 #include "MinHook.h"
 #include "BaseFunctional.h"
-#include "Offsets.h"
-#include "MovementController.h"
 #include <memory>
 #include <vector>
-
-void Initialize(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
-    Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
-
-    functional.push_back(std::make_unique<MovementController>());
-}
+#include <condition_variable>
 
 DWORD WINAPI MainThread(LPVOID lpParam) {
     MH_Initialize();
+    std::condition_variable cvMainThread;
 
     std::vector<std::unique_ptr<BaseFunctional>> functional;
-
-    Initialize(functional);
 
     for (int i = 0; i < functional.size(); i++) {
         functional[i]->Initialize();
