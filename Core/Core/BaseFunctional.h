@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include "BaseFunctional.h"
+
 class BaseFunctional {
 public:
 	virtual void Initialize() = 0;

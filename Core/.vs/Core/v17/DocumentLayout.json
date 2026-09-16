@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\MovementController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\MovementController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\BaseFunctional.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\BaseFunctional.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\pch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\pch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,14 +71,105 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MovementController.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp",
+              "RelativeDocumentMoniker": "Core\\MovementController.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp*",
+              "RelativeToolTip": "Core\\MovementController.cpp*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwBwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-16T16:55:49.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovementController.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h",
+              "RelativeDocumentMoniker": "Core\\MovementController.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h",
+              "RelativeToolTip": "Core\\MovementController.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-16T16:56:00.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Offsets.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h",
+              "RelativeDocumentMoniker": "Core\\Offsets.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h",
+              "RelativeToolTip": "Core\\Offsets.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-16T16:56:14.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "framework.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h",
+              "RelativeDocumentMoniker": "Core\\framework.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h",
+              "RelativeToolTip": "Core\\framework.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-16T16:55:58.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "pch.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\pch.cpp",
+              "RelativeDocumentMoniker": "Core\\pch.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\pch.cpp",
+              "RelativeToolTip": "Core\\pch.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-16T16:56:22.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BaseFunctional.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h",
+              "RelativeDocumentMoniker": "Core\\BaseFunctional.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h",
+              "RelativeToolTip": "Core\\BaseFunctional.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-16T16:55:56.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "dllmain.cpp",
               "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
               "RelativeDocumentMoniker": "Core\\dllmain.cpp",
               "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
               "RelativeToolTip": "Core\\dllmain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-15T11:29:27.339Z",
+              "WhenOpened": "2026-09-16T16:55:47.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseFunctional.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.cpp",
+              "RelativeDocumentMoniker": "Core\\BaseFunctional.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.cpp",
+              "RelativeToolTip": "Core\\BaseFunctional.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-16T16:55:44.787Z",
               "EditorCaption": ""
             }
           ]
