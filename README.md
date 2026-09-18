@@ -19,3 +19,9 @@
 </div>
 
 <hr>
+
+
+## 📚 Содержание NovaMem учебника (Features & Write-ups)
+* 🐇 **Модуль Передвижения (Movement)**
+* [Глава 1. Распрыжка (BunnyHop): Взлом флага земли и магия блока else](./docs/movement/MovementController.md) — *Статус: [Завершено]*
+* [Глава 2. Идеальный стрейф (AutoStrafe): Математика углов обзора](./docs/movement/Autostrafe.md) — *Статус: [В разработке]*
