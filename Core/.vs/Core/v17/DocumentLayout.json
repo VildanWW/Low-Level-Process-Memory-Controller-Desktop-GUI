@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\MovementController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\MovementController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\MovementController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -71,12 +71,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MovementController.cpp",
               "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp",
               "RelativeDocumentMoniker": "Core\\MovementController.cpp",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp*",
-              "RelativeToolTip": "Core\\MovementController.cpp*",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.cpp",
+              "RelativeToolTip": "Core\\MovementController.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-16T19:31:15.995Z",
@@ -84,13 +84,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MovementController.h",
               "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h",
               "RelativeDocumentMoniker": "Core\\MovementController.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h*",
-              "RelativeToolTip": "Core\\MovementController.h*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\MovementController.h",
+              "RelativeToolTip": "Core\\MovementController.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-09-16T19:32:19.631Z",
               "EditorCaption": ""
