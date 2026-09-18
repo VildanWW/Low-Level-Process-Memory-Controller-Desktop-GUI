@@ -9,6 +9,9 @@
 
 void Initialize(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
     Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
+    Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
+
+    Offsets::rotation = 0x2DC2B20;
 
     functional.push_back(std::make_unique<MovementController>());
 }

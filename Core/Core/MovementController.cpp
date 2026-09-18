@@ -1,30 +1,37 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "MovementController.h"
 #include "MinHook.h"
 #include "Offsets.h"
 #include <Windows.h>
+#include <math.h>
 
 void MovementController::Initialize() {
 	uintptr_t absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
 
-	MH_CreateHook((LPVOID)absoluteMoveAddress, &MovementController::hk_moveHandler, (LPVOID*)&MovementController::o_moveHandler);
-	
+	MH_CreateHook((LPVOID)absoluteMoveAddress, &MovementController::hk_MoveHandler, (LPVOID*)&MovementController::o_MoveHandler);
 	MH_EnableHook((LPVOID)absoluteMoveAddress);
+
+	//uintptr_t absoluteRotationAddress = Offsets::hwBase + GameFunctions::rotationAddress;
+
+	//MH_CreateHook((LPVOID)absoluteRotationAddress, &MovementController::hk_rotationHandler, (LPVOID*)&MovementController::o_rotationHandler);
+	//MH_EnableHook((LPVOID)absoluteRotationAddress);
 }
 
 void MovementController::ShutDown() {
 	uintptr_t absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
 	MH_DisableHook((LPVOID)absoluteMoveAddress);
+
+	//uintptr_t absoluteRotationAddress = Offsets::hwBase + GameFunctions::rotationAddress;
+	//MH_DisableHook((LPVOID)absoluteRotationAddress);
 }
 
-unsigned int __fastcall MovementController::hk_moveHandler(char param_1) {
-	unsigned int originalValue = o_moveHandler(param_1);
+unsigned int __fastcall MovementController::hk_MoveHandler(char param_1) {
+	unsigned int originalValue = o_MoveHandler(param_1);
 	unsigned int modifiedValue = originalValue;
 
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000) 
 	{
-		DWORD_PTR clientBase = (DWORD_PTR)GetModuleHandleA("client.dll");
-		int* airAddress = (int*)(clientBase + Offsets::jumpAddress);
+		int* airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
 
 		if (airAddress != nullptr) 
 		{
@@ -41,3 +48,4 @@ unsigned int __fastcall MovementController::hk_moveHandler(char param_1) {
 	return modifiedValue;
 }
 
+void __stdcall MovementController::hk_RotationHandler(float* param_1) {}
