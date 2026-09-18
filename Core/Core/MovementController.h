@@ -10,7 +10,7 @@ public:
     typedef void(__stdcall* t_RotationHandler)(float* param_1);
     static inline t_RotationHandler o_RotationHandler = nullptr;
     static void __stdcall hk_RotationHandler(float* param_1);
-     
+
     void Initialize() override;
     void ShutDown() override;
 };
