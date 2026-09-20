@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="BaseFunctional.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Hotkeys.h" />
     <ClInclude Include="MovementController.h" />
     <ClInclude Include="Offsets.h" />
     <ClInclude Include="pch.h" />

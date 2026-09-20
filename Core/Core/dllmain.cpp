@@ -10,8 +10,10 @@
 void Initialize(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
     Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
     Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
+    Offsets::absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
+    Offsets::absoluteScreenAddress = Offsets::hwBase + GameFunctions::screenFadeAddress;
 
-    Offsets::rotation = 0x2DC2B20;
+    Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
 
     functional.push_back(std::make_unique<MovementController>());
 }
@@ -28,7 +30,7 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
     }
 
     while (!(GetAsyncKeyState(VK_END) & 0x8000)) {
-        Sleep(100);
+        Sleep(1);
     }
 
     for (int i = 0; i < functional.size(); i++) {
