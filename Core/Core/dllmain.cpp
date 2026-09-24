@@ -2,12 +2,15 @@
 #include "pch.h"
 #include "MinHook.h"
 #include "BaseFunctional.h"
+#include "Hooks.h"
 #include "Offsets.h"
-#include "MovementController.h"
+#include "Bhop.h"      
+#include "AntiFlash.h"
 #include <memory>
 #include <vector>
 
-void Initialize(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
+
+void InitializeAddressesAndModules(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
     Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
     Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
     Offsets::absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
@@ -15,7 +18,8 @@ void Initialize(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
 
     Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
 
-    functional.push_back(std::make_unique<MovementController>());
+    functional.push_back(std::make_unique<Bhop>());
+    functional.push_back(std::make_unique<AntiFlash>());
 }
 
 DWORD WINAPI MainThread(LPVOID lpParam) {
@@ -23,9 +27,11 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
 
     std::vector<std::unique_ptr<BaseFunctional>> functional;
 
-    Initialize(functional);
+    InitializeAddressesAndModules(functional);
 
-    for (int i = 0; i < functional.size(); i++) {
+    Hooks::Initialize();
+
+    for (size_t i = 0; i < functional.size(); i++) {
         functional[i]->Initialize();
     }
 
@@ -33,11 +39,13 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
         Sleep(1);
     }
 
-    for (int i = 0; i < functional.size(); i++) {
+    for (size_t i = 0; i < functional.size(); i++) {
         functional[i]->ShutDown();
     }
 
+    Hooks::ShutDown();
     MH_Uninitialize();
+
     FreeLibraryAndExitThread((HMODULE)lpParam, 0);
     return 0;
 }

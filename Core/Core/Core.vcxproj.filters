@@ -27,10 +27,19 @@
     <ClInclude Include="Offsets.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="MovementController.h">
+    <ClInclude Include="Hotkeys.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Hotkeys.h">
+    <ClInclude Include="Hooks.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Bhop.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="AntiFlash.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="EventBus.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,10 +50,16 @@
     <ClCompile Include="pch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="BaseFunctional.cpp">
+    <ClCompile Include="Bhop.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="MovementController.cpp">
+    <ClCompile Include="Hooks.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiFlash.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="EventBus.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
