@@ -42,6 +42,9 @@
     <ClInclude Include="EventBus.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="AntiSmoke.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -60,6 +63,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="EventBus.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiSmoke.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

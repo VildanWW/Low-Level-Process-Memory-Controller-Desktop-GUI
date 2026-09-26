@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AntiFlash.h" />
+    <ClInclude Include="AntiSmoke.h" />
     <ClInclude Include="BaseFunctional.h" />
     <ClInclude Include="Bhop.h" />
     <ClInclude Include="EventBus.h" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AntiFlash.cpp" />
+    <ClCompile Include="AntiSmoke.cpp" />
     <ClCompile Include="Bhop.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="EventBus.cpp" />

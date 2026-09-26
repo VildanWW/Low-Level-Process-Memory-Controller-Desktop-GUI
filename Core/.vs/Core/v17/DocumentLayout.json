@@ -3,56 +3,56 @@
   "WorkspaceRootPath": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Hooks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\EventBus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\BaseFunctional.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiSmoke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\AntiSmoke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Bhop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hotkeys.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Hotkeys.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Hooks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\EventBus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiSmoke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\AntiSmoke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\AntiFlash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\AntiFlash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Bhop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Hooks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\EventBus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Offsets.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Hooks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\Bhop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\BaseFunctional.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|solutionrelative:Core\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25DE6B61-8475-42F6-829B-E59B27066788}|Core\\Core.vcxproj|C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,119 +98,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BaseFunctional.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h",
-              "RelativeDocumentMoniker": "Core\\BaseFunctional.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h",
-              "RelativeToolTip": "Core\\BaseFunctional.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T14:13:29.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Bhop.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.h",
-              "RelativeDocumentMoniker": "Core\\Bhop.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.h",
-              "RelativeToolTip": "Core\\Bhop.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T11:46:11.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EventBus.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.h",
-              "RelativeDocumentMoniker": "Core\\EventBus.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.h",
-              "RelativeToolTip": "Core\\EventBus.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T10:36:16.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "framework.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h",
-              "RelativeDocumentMoniker": "Core\\framework.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h",
-              "RelativeToolTip": "Core\\framework.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T14:25:07.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Hooks.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.h",
-              "RelativeDocumentMoniker": "Core\\Hooks.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.h",
-              "RelativeToolTip": "Core\\Hooks.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T12:07:01.304Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dllmain.cpp",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
-              "RelativeDocumentMoniker": "Core\\dllmain.cpp",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
-              "RelativeToolTip": "Core\\dllmain.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADgAAAABAAAAAAAAAA==",
+              "Title": "Hooks.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.cpp",
+              "RelativeDocumentMoniker": "Core\\Hooks.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.cpp",
+              "RelativeToolTip": "Core\\Hooks.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-23T13:48:46.04Z",
+              "WhenOpened": "2026-09-22T06:24:42.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AntiFlash.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.h",
-              "RelativeDocumentMoniker": "Core\\AntiFlash.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.h",
-              "RelativeToolTip": "Core\\AntiFlash.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "Hooks.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.h",
+              "RelativeDocumentMoniker": "Core\\Hooks.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.h",
+              "RelativeToolTip": "Core\\Hooks.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T12:20:48.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Hotkeys.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hotkeys.h",
-              "RelativeDocumentMoniker": "Core\\Hotkeys.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hotkeys.h",
-              "RelativeToolTip": "Core\\Hotkeys.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T14:11:53.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Offsets.h",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h",
-              "RelativeDocumentMoniker": "Core\\Offsets.h",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h",
-              "RelativeToolTip": "Core\\Offsets.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-22T21:54:17.57Z",
+              "WhenOpened": "2026-09-23T12:07:01.304Z",
               "EditorCaption": ""
             },
             {
@@ -221,49 +130,138 @@
               "RelativeDocumentMoniker": "Core\\EventBus.cpp",
               "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.cpp",
               "RelativeToolTip": "Core\\EventBus.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-23T12:08:42.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AntiFlash.cpp",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.cpp",
-              "RelativeDocumentMoniker": "Core\\AntiFlash.cpp",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.cpp",
-              "RelativeToolTip": "Core\\AntiFlash.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-23T12:27:48.976Z",
+              "DocumentIndex": 6,
+              "Title": "EventBus.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.h",
+              "RelativeDocumentMoniker": "Core\\EventBus.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\EventBus.h",
+              "RelativeToolTip": "Core\\EventBus.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-23T10:36:16.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
+              "Title": "AntiSmoke.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiSmoke.h",
+              "RelativeDocumentMoniker": "Core\\AntiSmoke.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiSmoke.h",
+              "RelativeToolTip": "Core\\AntiSmoke.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-24T15:47:09.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AntiSmoke.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiSmoke.cpp",
+              "RelativeDocumentMoniker": "Core\\AntiSmoke.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiSmoke.cpp",
+              "RelativeToolTip": "Core\\AntiSmoke.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-24T15:47:23.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Offsets.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h",
+              "RelativeDocumentMoniker": "Core\\Offsets.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Offsets.h",
+              "RelativeToolTip": "Core\\Offsets.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-22T21:54:17.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dllmain.cpp",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
+              "RelativeDocumentMoniker": "Core\\dllmain.cpp",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\dllmain.cpp",
+              "RelativeToolTip": "Core\\dllmain.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-23T13:48:46.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Bhop.cpp",
               "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.cpp",
               "RelativeDocumentMoniker": "Core\\Bhop.cpp",
               "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.cpp",
               "RelativeToolTip": "Core\\Bhop.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-23T11:46:09.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Hooks.cpp",
-              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.cpp",
-              "RelativeDocumentMoniker": "Core\\Hooks.cpp",
-              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Hooks.cpp",
-              "RelativeToolTip": "Core\\Hooks.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-22T06:24:42.691Z",
+              "DocumentIndex": 4,
+              "Title": "AntiFlash.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.h",
+              "RelativeDocumentMoniker": "Core\\AntiFlash.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\AntiFlash.h",
+              "RelativeToolTip": "Core\\AntiFlash.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-23T12:20:48.576Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Bhop.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.h",
+              "RelativeDocumentMoniker": "Core\\Bhop.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\Bhop.h",
+              "RelativeToolTip": "Core\\Bhop.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-23T11:46:11.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseFunctional.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h",
+              "RelativeDocumentMoniker": "Core\\BaseFunctional.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\BaseFunctional.h",
+              "RelativeToolTip": "Core\\BaseFunctional.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-23T14:13:29.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "framework.h",
+              "DocumentMoniker": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h",
+              "RelativeDocumentMoniker": "Core\\framework.h",
+              "ToolTip": "C:\\Programming(c\u002B\u002B)\\Low-Level Process Memory Controller \u0026 Desktop GUI\\Core\\Core\\framework.h",
+              "RelativeToolTip": "Core\\framework.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-23T14:25:07.394Z"
             },
             {
               "$type": "Document",
@@ -275,8 +273,7 @@
               "RelativeToolTip": "Core\\pch.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-23T14:11:50.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-23T14:11:50.312Z"
             }
           ]
         }

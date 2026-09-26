@@ -6,20 +6,27 @@
 #include "Offsets.h"
 #include "Bhop.h"      
 #include "AntiFlash.h"
+#include "AntiSmoke.h"
 #include <memory>
 #include <vector>
+
+#pragma comment(lib, "opengl32.lib")
 
 
 void InitializeAddressesAndModules(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
     Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
     Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
+    Offsets::opengl32 = (intptr_t)GetModuleHandleA("opengl32.dll");
     Offsets::absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
     Offsets::absoluteScreenAddress = Offsets::hwBase + GameFunctions::screenFadeAddress;
+    Offsets::absoluteGlBeginAddress = Offsets::opengl32 + GameFunctions::GlBeginAddress;
+    Offsets::absoluteGlVertex3F = Offsets::opengl32 + GameFunctions::GlVertex3F;
 
     Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
 
     functional.push_back(std::make_unique<Bhop>());
     functional.push_back(std::make_unique<AntiFlash>());
+    functional.push_back(std::make_unique<AntiSmoke>());
 }
 
 DWORD WINAPI MainThread(LPVOID lpParam) {
