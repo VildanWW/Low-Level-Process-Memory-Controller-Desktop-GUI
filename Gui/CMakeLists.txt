@@ -17,6 +17,12 @@ qt_add_qml_module(appGui
     VERSION 1.0
     QML_FILES
         Main.qml
+        tabs/CombatTab.qml
+        tabs/EffectsTab.qml
+        tabs/MovementTab.qml
+        components/NeonButton.qml
+        components/CustomCheckbox.qml
+        components/MenuTabButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
