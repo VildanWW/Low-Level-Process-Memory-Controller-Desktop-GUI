@@ -12,15 +12,14 @@
 
 #pragma comment(lib, "opengl32.lib")
 
-
 void InitializeAddressesAndModules(std::vector<std::unique_ptr<BaseFunctional>>& functional) {
     Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
     Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
     Offsets::opengl32 = (intptr_t)GetModuleHandleA("opengl32.dll");
     Offsets::absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
     Offsets::absoluteScreenAddress = Offsets::hwBase + GameFunctions::screenFadeAddress;
-    Offsets::absoluteGlBeginAddress = Offsets::opengl32 + GameFunctions::GlBeginAddress;
-    Offsets::absoluteGlVertex3F = Offsets::opengl32 + GameFunctions::GlVertex3F;
+    Offsets::absoluteGlBeginAddress = Offsets::opengl32 + GameFunctions::glBeginAddress;
+    Offsets::absoluteGlVertex3F = Offsets::opengl32 + GameFunctions::glVertex3F;
 
     Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
 

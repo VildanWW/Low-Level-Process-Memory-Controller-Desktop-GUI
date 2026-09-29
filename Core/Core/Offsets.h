@@ -20,8 +20,8 @@ struct Offsets {
 struct GameFunctions {
 	static constexpr uintptr_t moveAddress = 0x9B880;
 	static constexpr uintptr_t screenFadeAddress = 0xAFCA0;
-	static constexpr uintptr_t GlBeginAddress = 0x274B0;
-	static constexpr uintptr_t GlVertex3F = 0x294F0;
+	static constexpr uintptr_t glBeginAddress = 0x274B0;
+	static constexpr uintptr_t glVertex3F = 0x294F0;
 };
 
 //static constexpr uintptr_t rotationAddress = 0x2DC2B20;

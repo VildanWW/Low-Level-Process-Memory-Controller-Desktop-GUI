@@ -4,9 +4,15 @@ project(Gui VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
+qt_standard_project_setup()
 
-qt_standard_project_setup(REQUIRES 6.8)
+set(QWINDOWKIT_BUILD_INSTALL OFF CACHE BOOL "" FORCE)
+set(QWINDOWKIT_BUILD_QUICK ON CACHE BOOL "" FORCE)
+set(QWINDOWKIT_BUILD_WIDGETS OFF CACHE BOOL "" FORCE)
+set(QWINDOWKIT_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(QWINDOWKIT_ENABLE_WINDOWS_SYSTEM_BORDERS OFF CACHE BOOL "" FORCE)
+add_subdirectory(3rdparty/qwindowkit)
 
 qt_add_executable(appGui
     main.cpp
@@ -25,11 +31,7 @@ qt_add_qml_module(appGui
         components/MenuTabButton.qml
 )
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
 set_target_properties(appGui PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appGui
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
@@ -37,7 +39,10 @@ set_target_properties(appGui PROPERTIES
 )
 
 target_link_libraries(appGui
-    PRIVATE Qt6::Quick
+    PRIVATE
+        Qt6::Quick
+        Qt6::QuickControls2
+        QWindowKit::Quick
 )
 
 include(GNUInstallDirs)
