@@ -32,6 +32,22 @@ bool AntiSmoke::HandleGlBeginAntiSmoke(unsigned int mode) {
 		}
 	}
 	bIsSmokeCurrentQuad = false;
-	return false;
+	return false; // Возвращаем false, показывая, что текущий объект — не дым, а обычный безвредный эффект
+}
+```
+Дальше по списку идет функция glVertex3f, так что давайте попытаемся ее разобрать поподробнее
+
+<img width="713" height="327" alt="image" src="https://github.com/user-attachments/assets/e594927f-c768-4e02-999b-cb2a02fb5846" />
+
+На вход функции подаются три параметра param_1, param_2 и param_3 с типом undefined4. Так как Ghidra видит просто 4-байтовые куски памяти, она не размечает их тип, но по спецификации OpenGL мы знаем, что это три числа float — координаты (x, y, z) вершины. Далее на 8 строчке происходит обращение к массиву glDispatchTable по шестнадцатеричному индексу [0x62]. Из этой ячейки программа достает указатель на оригинальную функцию отрисовки из драйвера видеокарты
+
+И напишем хук-функцию
+
+```cpp
+bool AntiSmoke::HandleGlVertexAntiSmoke(float x, float y, float z) {
+	// Если флаг bIsSmokeCurrentQuad равен true, значит, текущий отрисовываемый квад является дымом.
+	// Возвращаем true для блокировки передачи координат (x, y, z) этой вершины на видеокарту.
+	if (running && bIsSmokeCurrentQuad) { return true; }
+	return false; // Для обычных объектов возвращаем false, разрешая штатную отрисовку
 }
 ```
