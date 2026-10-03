@@ -11,4 +11,27 @@
 ---
 
 ### 🕵️‍♂️ Шаг 2. Анализ найденных функций для понимания ситуации
-Пожалуй, начнем с glBegin
+Пожалуй, начнем с glBegin и разберем по строкам
+<img width="518" height="336" alt="image" src="https://github.com/user-attachments/assets/65d6144e-5192-4352-9687-d519f093d247" />
+
+На 2 строке видим название функции и параметр undefined4 param_1, где undefined4 - это беззнаковое число размером 4 байта. После чего на 8 строке берете указатель, который находится на 2 индексе в массиве glDispatchTable и сохраняете в pvVar1. Guard_check_icall (строка 9) - это встроенная защита Windows, которая проверяет, что вызов функции безопасен и адрес памяти не подменен. 
+
+И сразу приступаем в написанию хук-функции
+
+```cpp
+bool AntiSmoke::HandleGlBeginAntiSmoke(unsigned int mode) {
+	if (running && mode == GL_QUADS) { // Проверка на квады(четырехугольники), так игра рисует квадами
+		float curcol[4]; // Массив из 4 основных цветов(RGBA)
+		glGetFloatv(GL_CURRENT_COLOR, curcol); // Запрос, чтобы понять какими цветами будет красить квады
+
+    // Так как дым, это объект одного цвета во всех точках пространства, то справедливо равенство A=B && B=C => A=C => A=B=C
+    // Дополнительно отсекаем чистый черный (0.0f) и чистый белый (1.0f) цвета.
+		if (curcol[0] == curcol[1] && curcol[1] == curcol[2] && curcol[0] > 0.01f && curcol[0] < 0.99f) {
+			bIsSmokeCurrentQuad = true; 
+			return true; 
+		}
+	}
+	bIsSmokeCurrentQuad = false;
+	return false;
+}
+```
