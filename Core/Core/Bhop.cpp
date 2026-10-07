@@ -3,27 +3,31 @@
 #include "Hooks.h"
 #include "Offsets.h"
 
-void Bhop::Initialize() {
-	running = true;
-	
-	moveToken = EventBus::SubscribeMove([this](char param_1, unsigned int value) {
-		return HandleBhopMove(param_1, value);
-	});
-}
+namespace Core {
+    namespace Functionals {
+        void Bhop::Initialize() {
+            running = true;
 
-void Bhop::ShutDown() {
-	running = false;
-	EventBus::UnsubscribeMove(moveToken);
-}
+            moveToken = EventBus::SubscribeMove([this](char param_1, unsigned int value) {
+                return HandleBhopMove(param_1, value);
+            });
+        }
 
-unsigned int Bhop::HandleBhopMove(char param_1, unsigned int value) {
-    if (Offsets::airAddress == nullptr) return value;
+        void Bhop::ShutDown() {
+            running = false;
+            EventBus::UnsubscribeMove(moveToken);
+        }
 
-    if (GetAsyncKeyState(Offsets::bhopKey) & 0x8000) {
-        if (*Offsets::airAddress == 0)
-            value |= Offsets::jumpFlag;
-        else
-            value &= ~Offsets::jumpFlag;
+        unsigned int Bhop::HandleBhopMove(char param_1, unsigned int value) {
+            if (Offsets::airAddress == nullptr) return value;
+
+            if (GetAsyncKeyState(Offsets::bhopKey) & 0x8000) {
+                if (*Offsets::airAddress == 0)
+                    value |= Offsets::jumpFlag;
+                else
+                    value &= ~Offsets::jumpFlag;
+            }
+            return value;
+        }
     }
-    return value;
 }
