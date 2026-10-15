@@ -9,11 +9,19 @@
 #include "AntiSmoke.h"
 #include <memory>
 #include <vector>
+#include <condition_variable>
 
 #pragma comment(lib, "opengl32.lib")
 
 namespace Core {
-    void InitializeAddressesAndModules(std::vector<std::unique_ptr<Core::Functionals::BaseFunctional>>& functional) {
+
+    namespace {
+        std::mutex shutdownMutex;
+        std::condition_variable shutdownSV;
+        bool shutDownProgram = false;
+    }
+
+    void InitializeAddressesAndModules(std::vector<std::unique_ptr<Functionals::BaseFunctional>>& functional) {
         Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
         Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
         Offsets::opengl32 = (intptr_t)GetModuleHandleA("opengl32.dll");
@@ -29,6 +37,13 @@ namespace Core {
         functional.push_back(std::make_unique<Core::Functionals::AntiSmoke>());
     }
 
+    DWORD WINAPI QtListener(LPVOID lpParam) {
+        auto& functional = *static_cast<std::vector<std::unique_ptr<Functionals::BaseFunctional>>*>(lpParam);
+
+        //HANDLE hPipe = CreateNamedPipeA
+        return 0;
+    }
+
     DWORD WINAPI MainThread(LPVOID lpParam) {
         MH_Initialize();
 
@@ -38,13 +53,10 @@ namespace Core {
 
         Hooks::Initialize();
 
-        for (size_t i = 0; i < functional.size(); i++) {
-            functional[i]->Initialize();
-        }
+        HANDLE hQtThread = CreateThread(NULL, 0, QtListener, &functional, 0, NULL);
 
-        while (!(GetAsyncKeyState(VK_END) & 0x8000)) {
-            Sleep(1);
-        }
+        std::unique_lock<std::mutex> lock(shutdownMutex);
+        shutdownSV.wait(lock, []() {return shutDownProgram; });
 
         for (size_t i = 0; i < functional.size(); i++) {
             functional[i]->ShutDown();
@@ -58,7 +70,7 @@ namespace Core {
     }
 }
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved) {
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
         CreateThread(NULL, 0, Core::MainThread, hModule, 0, NULL);
     }

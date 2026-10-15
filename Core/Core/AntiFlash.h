@@ -13,7 +13,6 @@ namespace Core {
 
 			bool HandleAntiFlashScreen(const char* param_1, int param_2, const unsigned char* param_3);
 		};
-
 	}
 }
 
