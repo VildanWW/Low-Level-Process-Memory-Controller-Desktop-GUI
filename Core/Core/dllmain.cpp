@@ -58,12 +58,12 @@ namespace Core {
         
         while (!shutDownProgram) {
             if (ConnectNamedPipe(hPipe, NULL) || GetLastError() == ERROR_PIPE_CONNECTED) {
-                char buffer[2];
+                unsigned char buffer[2]; // Two elements!
                 DWORD bytesRead = 0;
 
                 if (ReadFile(hPipe, buffer, sizeof(buffer), &bytesRead, NULL) && bytesRead == 2) {
-                    char functionId = buffer[0];
-                    char state = buffer[1];
+                    unsigned char functionId = buffer[0];
+                    unsigned char state = buffer[1];
 
                     if (functionId == IdFunction::EndProgram) {
                         std::lock_guard<std::mutex> lock(shutdownMutex);
