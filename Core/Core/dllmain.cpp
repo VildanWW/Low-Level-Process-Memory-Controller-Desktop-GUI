@@ -40,7 +40,58 @@ namespace Core {
     DWORD WINAPI QtListener(LPVOID lpParam) {
         auto& functional = *static_cast<std::vector<std::unique_ptr<Functionals::BaseFunctional>>*>(lpParam);
 
-        //HANDLE hPipe = CreateNamedPipeA
+        HANDLE hPipe = CreateNamedPipeA(
+            "\\\\.\\pipe\\MyCS16CheatPipe",
+            PIPE_ACCESS_INBOUND,
+            PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT,
+            1,
+            0,
+            1024,
+            0,
+            NULL
+        );
+
+        if (hPipe == INVALID_HANDLE_VALUE) {
+            return -1;
+        }
+
+        
+        while (!shutDownProgram) {
+            if (ConnectNamedPipe(hPipe, NULL) || GetLastError() == ERROR_PIPE_CONNECTED) {
+                char buffer[2];
+                DWORD bytesRead = 0;
+
+                if (ReadFile(hPipe, buffer, sizeof(buffer), &bytesRead, NULL) && bytesRead == 2) {
+                    char functionId = buffer[0];
+                    char state = buffer[1];
+
+                    if (functionId == IdFunction::EndProgram) {
+                        std::lock_guard<std::mutex> lock(shutdownMutex);
+                        {
+                            shutDownProgram = true;
+                        }
+
+                        shutdownSV.notify_one();
+                        break;
+                    }
+
+                    if (functionId == IdFunction::Bhop) {
+                        if (state == State::On) functional[IdFunction::Bhop]->Initialize();
+                        else functional[IdFunction::Bhop]->ShutDown();
+                    }
+                    else if (functionId == IdFunction::NoFlash) {
+                        if (state == State::On) functional[IdFunction::NoFlash]->Initialize();
+                        else functional[IdFunction::NoFlash]->ShutDown();
+                    }
+                    else if (functionId == IdFunction::NoSmoke) {
+                        if (state == State::On) functional[IdFunction::NoSmoke]->Initialize();
+                        else functional[IdFunction::NoSmoke]->ShutDown();
+                    }
+                }
+                DisconnectNamedPipe(hPipe);
+            }
+        }
+        CloseHandle(hPipe);
         return 0;
     }
 
@@ -56,7 +107,7 @@ namespace Core {
         HANDLE hQtThread = CreateThread(NULL, 0, QtListener, &functional, 0, NULL);
 
         std::unique_lock<std::mutex> lock(shutdownMutex);
-        shutdownSV.wait(lock, []() {return shutDownProgram; });
+        shutdownSV.wait(lock, []() { return shutDownProgram; });
 
         for (size_t i = 0; i < functional.size(); i++) {
             functional[i]->ShutDown();
