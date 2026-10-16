@@ -5,6 +5,8 @@ project(Gui VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
 qt_standard_project_setup()
 
 set(QWINDOWKIT_BUILD_INSTALL OFF CACHE BOOL "" FORCE)
@@ -29,6 +31,9 @@ qt_add_qml_module(appGui
         components/NeonButton.qml
         components/CustomCheckbox.qml
         components/MenuTabButton.qml
+        SOURCES
+        appGui/Pipemanager.h
+        appGui/Pipemanager.cpp
 )
 
 set_target_properties(appGui PROPERTIES
@@ -44,6 +49,8 @@ target_link_libraries(appGui
         Qt6::QuickControls2
         QWindowKit::Quick
 )
+target_link_libraries(appGui PRIVATE Qt6::Core)
+target_link_libraries(appGui PRIVATE Qt6::Core)
 
 include(GNUInstallDirs)
 install(TARGETS appGui
