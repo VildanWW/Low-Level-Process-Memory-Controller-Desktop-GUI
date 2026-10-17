@@ -41,7 +41,7 @@ namespace Core {
         auto& functional = *static_cast<std::vector<std::unique_ptr<Functionals::BaseFunctional>>*>(lpParam);
 
         HANDLE hPipe = CreateNamedPipeA(
-            "\\\\.\\pipe\\MyCS16CheatPipe",
+            "\\\\.\\pipe\\CS16CheatPipe",
             PIPE_ACCESS_INBOUND,
             PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT,
             1,

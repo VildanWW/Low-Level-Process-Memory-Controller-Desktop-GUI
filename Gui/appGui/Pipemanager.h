@@ -13,6 +13,8 @@ public:
     Q_INVOKABLE bool ConnectToDll();
     Q_INVOKABLE void DisconnectFromDll();
     Q_INVOKABLE void SendCommand(int functionId, int state);
+
+    ~PipeManager();
 private:
     HANDLE hPipe = INVALID_HANDLE_VALUE;
 signals:
