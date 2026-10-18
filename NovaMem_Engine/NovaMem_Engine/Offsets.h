@@ -13,6 +13,7 @@ namespace Core {
 		inline uintptr_t absoluteScreenAddress = 0;
 		inline uintptr_t absoluteGlBeginAddress = 0;
 		inline uintptr_t absoluteGlVertex3F = 0;
+		inline uintptr_t absoluteWglSwapBuffers = 0;
 
 		constexpr int bhopKey = static_cast<int>(Hotkeys::Bhop);
 		constexpr unsigned int jumpFlag = static_cast<unsigned int>(GoldSrcButtons::IN_JUMP);

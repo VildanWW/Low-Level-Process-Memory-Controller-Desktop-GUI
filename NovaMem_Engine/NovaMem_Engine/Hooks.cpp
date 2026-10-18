@@ -3,6 +3,9 @@
 #include "Offsets.h"
 #include "MinHook.h"
 #include "EventBus.h"
+#include "Gui.h"
+#include <imgui_impl_opengl2.h>
+#include <imgui_impl_win32.h>
 
 namespace Core::Hooks {
 	void Hooks::Initialize() {
@@ -10,6 +13,7 @@ namespace Core::Hooks {
 		MH_CreateHook((LPVOID)Offsets::absoluteScreenAddress, &hk_ScreenHandler, (LPVOID*)&o_ScreenHandler);
 		MH_CreateHook((LPVOID)Offsets::absoluteGlBeginAddress, &hk_GlBeginHandler, (LPVOID*)&o_GlBeginHandler);
 		MH_CreateHook((LPVOID)Offsets::absoluteGlVertex3F, &hk_GlVertex3F, (LPVOID*)&o_GlVertex3F);
+		MH_CreateHook((LPVOID)Offsets::absoluteWglSwapBuffers, &hk_WglSwapBuffers, (LPVOID*)&o_WglSwapBuffers);
 
 		MH_EnableHook(MH_ALL_HOOKS);
 	}
@@ -21,6 +25,12 @@ namespace Core::Hooks {
 		EventBus::screenList.clear();
 		EventBus::glBeginList.clear();
 		EventBus::glVertex3FList.clear();
+
+		if (ImGui::GetCurrentContext() != nullptr) {
+			ImGui_ImplOpenGL2_Shutdown();
+			ImGui_ImplWin32_Shutdown();
+			ImGui::DestroyContext();
+		}
 	}
 
 	unsigned int __fastcall Hooks::hk_MoveHandler(char param_1) {
@@ -78,6 +88,28 @@ namespace Core::Hooks {
 		if (shouldBlock) { return; }
 
 		o_GlVertex3F(param_1, param_2, param_3);
+	}
+	BOOL __stdcall hk_WglSwapBuffers(HDC hdc) {
+		static bool imguiInit = false;
+
+		if (!imguiInit) {
+			HWND hwnd = WindowFromDC(hdc);
+			ImGui::CreateContext();
+			ImGui_ImplWin32_Init(hwnd);
+			ImGui_ImplOpenGL2_Init();
+			imguiInit = true;
+		}
+
+		ImGui_ImplOpenGL2_NewFrame();
+		ImGui_ImplWin32_NewFrame();
+		ImGui::NewFrame();
+
+		Gui::Menu::Render();
+
+		ImGui::Render();
+		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+
+		return o_WglSwapBuffers(hdc);
 	}
 }
 

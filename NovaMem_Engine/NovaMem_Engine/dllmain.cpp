@@ -29,6 +29,8 @@ namespace Core {
         Offsets::absoluteScreenAddress = Offsets::hwBase + GameFunctions::screenFadeAddress;
         Offsets::absoluteGlBeginAddress = Offsets::opengl32 + GameFunctions::glBeginAddress;
         Offsets::absoluteGlVertex3F = Offsets::opengl32 + GameFunctions::glVertex3F;
+        
+        Offsets::absoluteWglSwapBuffers = (uintptr_t)GetProcAddress((HMODULE)Offsets::opengl32, "wglSwapBuffers");
 
         Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
 
