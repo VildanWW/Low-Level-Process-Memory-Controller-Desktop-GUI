@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{25DE6B61-8475-42F6-829B-E59B27066788}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NovaMem_Engine", "NovaMem_Engine\NovaMem_Engine.vcxproj", "{25DE6B61-8475-42F6-829B-E59B27066788}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
