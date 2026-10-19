@@ -31,9 +31,9 @@ namespace Core {
         Offsets::absoluteGlVertex3F = Offsets::opengl32 + GameFunctions::glVertex3F;
         
         Offsets::absoluteWglSwapBuffers = (uintptr_t)GetProcAddress((HMODULE)Offsets::opengl32, "wglSwapBuffers");
-
+        
         Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
-
+        
         functional.push_back(std::make_unique<Core::Functionals::Bhop>());
         functional.push_back(std::make_unique<Core::Functionals::AntiFlash>());
         functional.push_back(std::make_unique<Core::Functionals::AntiSmoke>());

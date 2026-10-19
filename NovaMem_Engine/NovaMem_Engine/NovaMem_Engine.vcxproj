@@ -150,6 +150,7 @@
     <ClInclude Include="AntiSmoke.h" />
     <ClInclude Include="BaseFunctional.h" />
     <ClInclude Include="Bhop.h" />
+    <ClInclude Include="Combat.h" />
     <ClInclude Include="EventBus.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Hooks.h" />
@@ -163,17 +164,20 @@
     <ClInclude Include="ImGui\imstb_rectpack.h" />
     <ClInclude Include="ImGui\imstb_textedit.h" />
     <ClInclude Include="ImGui\imstb_truetype.h" />
+    <ClInclude Include="Misc.h" />
+    <ClInclude Include="Movement.h" />
     <ClInclude Include="Offsets.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Visuals.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AntiFlash.cpp" />
     <ClCompile Include="AntiSmoke.cpp" />
     <ClCompile Include="Bhop.cpp" />
+    <ClCompile Include="Combat.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="EventBus.cpp" />
     <ClCompile Include="Hooks.cpp" />
-    <ClCompile Include="Gui.cpp" />
     <ClCompile Include="ImGui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -202,12 +206,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Movement.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Visuals.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

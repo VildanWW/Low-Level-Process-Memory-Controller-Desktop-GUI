@@ -1,43 +1,21 @@
 ﻿#pragma once
+#include <string>
 
 namespace Gui {
 	namespace Menu {
-		void Render();
-	}
+		class Menu {
+		public:
+			Menu() = default;
+			virtual ~Menu() = default;
 
-	namespace Combat {
-		// Aim
-		inline bool aimbot = false;
-		inline float aimFov = 15.0f;
+			virtual std::string GetName() const = 0;
+			virtual void Draw() = 0;
 
-		// Ragebot
-		inline bool ragebot = false;
-
-		// NoRecoil
-		inline bool noRecoil = false;
-
-		// Draw
-		void DrawSettings();
-	}
-
-	namespace Movement {
-		// BunnyHop
-		inline bool bunnyhHop = false;
-
-		void DrawSettings();
-	}
-
-	namespace Visuals {
-		// Esp
-		inline bool esp = false;
-
-		void DrawSettings();
-	}
-
-	namespace Misc {
-		
-
-		void DrawSettings();
+			Menu(const Menu&) = delete;
+			Menu& operator=(const Menu&) = delete;
+			Menu(Menu&&) = delete;
+			Menu& operator=(Menu&&) = delete;
+		};
 	}
 }
 
