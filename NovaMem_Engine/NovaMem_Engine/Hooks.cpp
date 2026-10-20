@@ -3,9 +3,11 @@
 #include "Offsets.h"
 #include "MinHook.h"
 #include "EventBus.h"
-#include "Gui.h"
 #include <imgui_impl_opengl2.h>
 #include <imgui_impl_win32.h>
+#include "MenuManager.h"
+#include "Tabs.h"
+#include <memory>
 
 namespace Core {
 	namespace Hooks {
@@ -99,6 +101,12 @@ namespace Core {
 				ImGui::CreateContext();
 				ImGui_ImplWin32_Init(hwnd);
 				ImGui_ImplOpenGL2_Init();
+
+				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Combat>());
+				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Movement>());
+				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Visuals>());
+				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Misc>());
+
 				imguiInit = true;
 			}
 
@@ -106,7 +114,7 @@ namespace Core {
 			ImGui_ImplWin32_NewFrame();
 			ImGui::NewFrame();
 
-			//Gui::Menu::Render();
+			Gui::Menu::menuManager.DrawMainWindow();
 
 			ImGui::Render();
 			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());

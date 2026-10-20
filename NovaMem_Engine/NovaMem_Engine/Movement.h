@@ -4,9 +4,9 @@
 
 namespace Gui {
 	namespace Menu {
-		class Movement : Menu {
-			std::string GetName() const override;
-			void Draw() override;
+		class Movement : public Menu {
+			virtual std::string GetName() const override;
+			virtual void Draw() override;
 		};
 	}
 }

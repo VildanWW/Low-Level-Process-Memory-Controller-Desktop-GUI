@@ -5,9 +5,9 @@
 namespace Gui {
 	namespace Menu {
 		class Combat : public Menu {
-			std::string GetName() const override;
+			virtual std::string GetName() const override;
 
-			void Draw() override;
+			virtual void Draw() override;
 		};
 	}
 }

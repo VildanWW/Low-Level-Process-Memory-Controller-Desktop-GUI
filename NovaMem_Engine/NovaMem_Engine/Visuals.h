@@ -4,10 +4,10 @@
 
 namespace Gui {
 	namespace Menu {
-		class Visuals : Menu {
-			std::string GetName() const override;
+		class Visuals : public Menu {
+			virtual std::string GetName() const override;
 
-			void Draw() override;
+			virtual void Draw() override;
 		};
 	}
 }

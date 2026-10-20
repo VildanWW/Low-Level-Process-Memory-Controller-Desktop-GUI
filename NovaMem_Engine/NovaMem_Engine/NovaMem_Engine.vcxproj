@@ -164,10 +164,12 @@
     <ClInclude Include="ImGui\imstb_rectpack.h" />
     <ClInclude Include="ImGui\imstb_textedit.h" />
     <ClInclude Include="ImGui\imstb_truetype.h" />
+    <ClInclude Include="MenuManager.h" />
     <ClInclude Include="Misc.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="Offsets.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Tabs.h" />
     <ClInclude Include="Visuals.h" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +208,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Movement.cpp" />
     <ClCompile Include="pch.cpp">
