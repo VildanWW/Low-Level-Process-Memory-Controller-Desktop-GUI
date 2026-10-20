@@ -151,6 +151,7 @@
     <ClInclude Include="BaseFunctional.h" />
     <ClInclude Include="Bhop.h" />
     <ClInclude Include="Combat.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="EventBus.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Hooks.h" />
