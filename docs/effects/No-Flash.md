@@ -16,9 +16,21 @@
 Мы написали хук-функцию со стандартным соглашением вызовов `__cdecl`
 
 ```cpp
-unsigned int __cdecl MovementController::hk_ScreenHandler(const char* param_1, int param_2, const unsigned char* param_3) {
-	// Оставляем тело функции пустым, тем самым блокируя обработку сетевого сообщения ослепления
-	return 1;
+unsigned int __cdecl hk_ScreenHandler(const char* param_1, int param_2, const unsigned char* param_3) {
+	if (unloadingFromGame) return o_ScreenHandler(param_1, param_2, param_3);
+	bool allowMessage = true; // флаг для понимания, отключать ли белый эффект, по умолчанию true
+
+	for (const auto& [token, callback] : EventBus::screenList) {
+		if (!callback(param_1, param_2, param_3)) { // Если среди подписчиков, хотя бы один пришлет false, то выключаем белый эффект
+			allowMessage = false;
+		}
+	}
+
+	if (!allowMessage) {
+		return 1; // Возвращаем 1, показывая, что мы успешно перехватили и не дали самой игре отправить нормальные данные
+	}
+
+	return o_ScreenHandler(param_1, param_2, param_3);
 }
 ```
 
