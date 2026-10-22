@@ -2,6 +2,7 @@
 #include "MenuManager.h"
 #include "ImGui.h"
 #include "Tabs.h"
+#include "Config.h"
 
 namespace Gui {
 	namespace Menu {
@@ -9,6 +10,7 @@ namespace Gui {
 			tabs.push_back(std::move(upTab));
 		}
 		void MenuManager::DrawMainWindow() {
+
 			ImVec2 screenSize = ImGui::GetIO().DisplaySize;
 
 			ImGui::SetNextWindowSize(ImVec2(screenSize.x * 0.4f, screenSize.y * 0.5f), ImGuiCond_FirstUseEver);
@@ -16,7 +18,7 @@ namespace Gui {
 			ImGuiIO& io = ImGui::GetIO();
 			io.MouseDown[0] = (GetAsyncKeyState(VK_LBUTTON) & 0x8000) != 0;
 
-			if (ImGui::Begin("NovaMem Engine", nullptr, ImGuiWindowFlags_NoCollapse)) {
+			if (ImGui::Begin("NovaMem Engine", &Core::Settings::configSettings.menuOpen, ImGuiWindowFlags_NoCollapse)) {
 
 				if (ImGui::IsWindowHovered(ImGuiHoveredFlags_ChildWindows) && io.MouseDown[0]) {
 					if (!ImGui::IsAnyItemActive() && (io.MouseDelta.x != 0.0f || io.MouseDelta.y != 0.0f)) {
@@ -38,10 +40,12 @@ namespace Gui {
 				ImGui::Separator();
 
 				ImGui::BeginChild("MainContent", ImVec2(0, 0), false);
+				
 				if (!tabs.empty() && activeTabId < tabs.size()) {
 					tabs[activeTabId]->Draw();
 				}
-				ImGui::EndChild(); 
+				
+				ImGui::EndChild();
 
 				ImGui::End();
 			}

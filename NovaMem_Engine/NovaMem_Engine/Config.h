@@ -1,6 +1,9 @@
 ﻿#pragma once
 
 namespace Core {
+
+	void RequestShutdown();
+
 	namespace Settings {
 		// Combat
 		struct Aim {
@@ -38,6 +41,8 @@ namespace Core {
 			CombatStruct combat;
 			MovementStruct movement;
 			VisualsStruct visuals;
+
+			bool menuOpen = true;
 		};
 
 		inline ConfigSettings configSettings;

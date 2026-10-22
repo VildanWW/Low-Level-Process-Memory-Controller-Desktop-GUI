@@ -21,6 +21,14 @@ namespace Core {
         bool shutDownProgram = false;
     }
 
+    extern void RequestShutdown() { 
+        {
+            std::lock_guard<std::mutex> lock(shutdownMutex);
+            shutDownProgram = true;
+            shutdownSV.notify_one();
+        }
+    }
+
     void InitializeAddressesAndModules(std::vector<std::unique_ptr<Functionals::BaseFunctional>>& functional) {
         Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
         Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");

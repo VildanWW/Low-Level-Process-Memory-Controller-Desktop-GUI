@@ -8,6 +8,9 @@
 #include "MenuManager.h"
 #include "Tabs.h"
 #include <memory>
+#include "Config.h"
+
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 namespace Core {
 	namespace Hooks {
@@ -37,6 +40,7 @@ namespace Core {
 		}
 
 		unsigned int __fastcall hk_MoveHandler(char param_1) {
+			if (unloadingFromGame) return o_MoveHandler(param_1);
 			unsigned int value = o_MoveHandler(param_1);
 
 			for (const auto& [token, callback] : EventBus::moveList) {
@@ -46,6 +50,7 @@ namespace Core {
 		}
 
 		unsigned int __cdecl hk_ScreenHandler(const char* param_1, int param_2, const unsigned char* param_3) {
+			if (unloadingFromGame) return o_ScreenHandler(param_1, param_2, param_3);
 			bool allowMessage = true;
 
 			for (const auto& [token, callback] : EventBus::screenList) {
@@ -62,6 +67,10 @@ namespace Core {
 		}
 
 		void APIENTRY hk_GlBeginHandler(unsigned int param_1) {
+			if (unloadingFromGame) {
+				o_GlBeginHandler(param_1);
+				return;
+			}
 			bool shouldBlock = false;
 
 			for (auto const& [token, callback] : EventBus::glBeginList) {
@@ -78,6 +87,10 @@ namespace Core {
 		}
 
 		void APIENTRY hk_GlVertex3F(float param_1, float param_2, float param_3) {
+			if (unloadingFromGame) {
+				o_GlVertex3F(param_1, param_2, param_3);
+				return;
+			}
 			bool shouldBlock = false;
 
 			for (auto const& [token, callback] : EventBus::glVertex3FList) {
@@ -94,12 +107,13 @@ namespace Core {
 		}
 
 		BOOL __stdcall hk_WglSwapBuffers(HDC hdc) {
+			if (unloadingFromGame) return o_WglSwapBuffers(hdc);
 			static bool imguiInit = false;
 
 			if (!imguiInit) {
-				HWND hwnd = WindowFromDC(hdc);
+				gameHwnd = WindowFromDC(hdc);
 				ImGui::CreateContext();
-				ImGui_ImplWin32_Init(hwnd);
+				ImGui_ImplWin32_Init(gameHwnd);
 				ImGui_ImplOpenGL2_Init();
 
 				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Combat>());
@@ -108,6 +122,14 @@ namespace Core {
 				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Misc>());
 
 				imguiInit = true;
+			}
+
+			if (!Core::Settings::configSettings.menuOpen) {
+				unloadingFromGame = true;
+
+				RequestShutdown();
+
+				return o_WglSwapBuffers(hdc);
 			}
 
 			ImGui_ImplOpenGL2_NewFrame();
@@ -121,6 +143,16 @@ namespace Core {
 
 			return o_WglSwapBuffers(hdc);
 		}
+
+		LRESULT CALLBACK hk_WndProc(HWND hWnd, UINT uInt, WPARAM wParam, LPARAM lParam) {
+			if (unloadingFromGame) return o_WndProc(hWnd, uInt, wParam, lParam);
+
+			if (Core::Settings::configSettings.menuOpen && ImGui_ImplWin32_WndProcHandler(hWnd, uInt, wParam, lParam)) {
+				return true;
+			}
+
+			return CallWindowProc(o_WndProc, hWnd, uInt, wParam, lParam);
+ 		}
 	}
 }
 
