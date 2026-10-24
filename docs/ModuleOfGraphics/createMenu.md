@@ -13,7 +13,9 @@
 
 ```cpp
 BOOL __stdcall hk_WglSwapBuffers(HDC hdc) {
-    if (unloadingFromGame) return o_WglSwapBuffers(hdc); // флаг для корректного закрытия dll-файла при отгрузке, чтобы в последние моменты жизни файла, возвращались настоящие данные функции, а не наши подменённые
+    // Флаг для корректного закрытия dll-файла при отгрузке, чтобы в последние моменты жизни файла возвращались настоящие данные функции, а не наши подменённые
+    if (unloadingFromGame) return o_WglSwapBuffers(hdc); 
+    
     static bool imguiInit = false;
   
     if (!imguiInit) { // Срабатывает один раз при подключении dll-файла благодаря static-переменной "imguiInit"!
@@ -35,15 +37,28 @@ BOOL __stdcall hk_WglSwapBuffers(HDC hdc) {
       return o_WglSwapBuffers(hdc);
     }
   
-    ImGui_ImplOpenGL2_NewFrame();
-    ImGui_ImplWin32_NewFrame();
-    ImGui::NewFrame();
+    ImGui_ImplOpenGL2_NewFrame(); // Подготовка графического движка к работе
+    ImGui_ImplWin32_NewFrame(); // Для сбора нажатий и кликов Windows
+    ImGui::NewFrame(); // Функция, которая открывает (начинает) новый кадр логики интерфейса для процесса приложения
   
-    Gui::Menu::menuManager.DrawMainWindow();
+    Gui::Menu::menuManager.DrawMainWindow(); 
   
-    ImGui::Render();
-    ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+    ImGui::Render(); // Функция, которая завершает формирование кадра и формирует его геометрический чертёж
+    ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData()); // Функция, которая физически рисует пиксели интерфейса на экране
   
     return o_WglSwapBuffers(hdc);
-  }
+}
+```
+---
+```cpp
+LRESULT CALLBACK hk_WndProc(HWND hWnd, UINT uInt, WPARAM wParam, LPARAM lParam) {
+    if (unloadingFromGame) return CallWindowProc(o_WndProc, hWnd, uInt, wParam, lParam);
+
+    // ImGui_ImplWin32_WndProcHandler - функция Dear ImGui, которая отвечает за перехват, расшифровку и обработку всех системных сообщений от мыши и клавиатуры в операционной системе Windows
+    if (Settings::configSettings.menuOpen && ImGui_ImplWin32_WndProcHandler(hWnd, uInt, wParam, lParam)) {
+        return true; // Если мы кликнули по меню или пишем в него текст — «съедаем» клик. Игра о нем не узнает.
+    }
+
+    return CallWindowProc(o_WndProc, hWnd, uInt, wParam, lParam);
+}
 ```
