@@ -15,7 +15,7 @@
 
 Мы закинули `client.dll` в **Ghidra**. Так как декомпилятор по умолчанию использует базовый адрес `0x10000000`, мы прибавили к нему относительное смещение функции движения (`moveAddress = 0x9B880`) и перешли по адресу:
 `0x10000000 + 0x9B880 = 0x1009B880`
-<img width="1456" height="1001" alt="image" src="https://github.com/user-attachments/assets/e68e4092-4c68-4006-982f-ffedd514244e" />
+<img width="1456" height="1001" alt="image" src="../images/1.png" />
 
 ---
 
