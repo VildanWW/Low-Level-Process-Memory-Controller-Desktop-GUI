@@ -116,15 +116,12 @@ namespace Core {
 				ImGui_ImplWin32_Init(gameHwnd);
 				ImGui_ImplOpenGL2_Init();
 
-				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Combat>());
-				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Movement>());
-				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Visuals>());
-				Gui::Menu::menuManager.AddTab(std::make_unique<Gui::Menu::Misc>());
+				Gui::Menu::menuManager.UploadTabs();
 
 				imguiInit = true;
 			}
 
-			if (!Core::Settings::configSettings.menuOpen) {
+			if (!Settings::configSettings.menuOpen) {
 				unloadingFromGame = true;
 
 				RequestShutdown();
@@ -145,9 +142,9 @@ namespace Core {
 		}
 
 		LRESULT CALLBACK hk_WndProc(HWND hWnd, UINT uInt, WPARAM wParam, LPARAM lParam) {
-			if (unloadingFromGame) return o_WndProc(hWnd, uInt, wParam, lParam);
+			if (unloadingFromGame) return CallWindowProc(o_WndProc, hWnd, uInt, wParam, lParam);
 
-			if (Core::Settings::configSettings.menuOpen && ImGui_ImplWin32_WndProcHandler(hWnd, uInt, wParam, lParam)) {
+			if (Settings::configSettings.menuOpen && ImGui_ImplWin32_WndProcHandler(hWnd, uInt, wParam, lParam)) {
 				return true;
 			}
 

@@ -24,7 +24,6 @@ namespace Core {
 		LRESULT CALLBACK hk_WndProc(HWND hWnd, UINT uInt, WPARAM wParam, LPARAM lParam);
 
 		inline HWND gameHwnd = nullptr;
-		inline WNDPROC wndProc = nullptr;
 		inline bool unloadingFromGame = false;
 
 		void Initialize();

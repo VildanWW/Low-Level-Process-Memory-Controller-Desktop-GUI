@@ -20,6 +20,7 @@ namespace Gui {
 			MenuManager() = default;
 			void AddTab(std::unique_ptr<Menu> upTab);
 			void DrawMainWindow();
+			void UploadTabs();
 
 			MenuManager(const MenuManager&) = delete;
 			MenuManager& operator=(const MenuManager&) = delete;

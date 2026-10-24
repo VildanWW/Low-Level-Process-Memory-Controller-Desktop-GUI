@@ -50,5 +50,12 @@ namespace Gui {
 				ImGui::End();
 			}
 		}
+		
+		void MenuManager::UploadTabs() {
+			menuManager.AddTab(std::make_unique<Combat>());
+			menuManager.AddTab(std::make_unique<Movement>());
+			menuManager.AddTab(std::make_unique<Visuals>());
+			menuManager.AddTab(std::make_unique<Misc>());
+		}
 	}
 }
