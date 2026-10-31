@@ -8,14 +8,14 @@ namespace Core {
         void Bhop::Initialize() {
             running = true;
 
-            moveToken = EventBus::SubscribeMove([this](char param_1, unsigned int value) {
+            moveToken = Events::EventBus::SubscribeMove([this](char param_1, unsigned int value) {
                 return HandleBhopMove(param_1, value);
             });
         }
 
         void Bhop::ShutDown() {
             running = false;
-            EventBus::UnsubscribeMove(moveToken);
+            Events::EventBus::UnsubscribeMove(moveToken);
         }
 
         unsigned int Bhop::HandleBhopMove(char param_1, unsigned int value) {

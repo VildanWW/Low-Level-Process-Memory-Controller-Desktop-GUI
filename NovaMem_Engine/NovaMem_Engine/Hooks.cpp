@@ -27,10 +27,10 @@ namespace Core {
 		void ShutDown() {
 			MH_DisableHook(MH_ALL_HOOKS);
 
-			EventBus::moveList.clear();
-			EventBus::screenList.clear();
-			EventBus::glBeginList.clear();
-			EventBus::glVertex3FList.clear();
+			Events::EventBus::moveList.clear();
+			Events::EventBus::screenList.clear();
+			Events::EventBus::glBeginList.clear();
+			Events::EventBus::glVertex3FList.clear();
 
 			if (ImGui::GetCurrentContext() != nullptr) {
 				ImGui_ImplOpenGL2_Shutdown();
@@ -43,7 +43,7 @@ namespace Core {
 			if (unloadingFromGame) return o_MoveHandler(param_1);
 			unsigned int value = o_MoveHandler(param_1);
 
-			for (const auto& [token, callback] : EventBus::moveList) {
+			for (const auto& [token, callback] : Events::EventBus::moveList) {
 				value = callback(param_1, value);
 			}
 			return value;
@@ -53,7 +53,7 @@ namespace Core {
 			if (unloadingFromGame) return o_ScreenHandler(param_1, param_2, param_3);
 			bool allowMessage = true;
 
-			for (const auto& [token, callback] : EventBus::screenList) {
+			for (const auto& [token, callback] : Events::EventBus::screenList) {
 				if (!callback(param_1, param_2, param_3)) {
 					allowMessage = false;
 				}
@@ -73,7 +73,7 @@ namespace Core {
 			}
 			bool shouldBlock = false;
 
-			for (auto const& [token, callback] : EventBus::glBeginList) {
+			for (auto const& [token, callback] : Events::EventBus::glBeginList) {
 				if (callback) {
 					if (callback(param_1)) {
 						shouldBlock = true;
@@ -93,7 +93,7 @@ namespace Core {
 			}
 			bool shouldBlock = false;
 
-			for (auto const& [token, callback] : EventBus::glVertex3FList) {
+			for (auto const& [token, callback] : Events::EventBus::glVertex3FList) {
 				if (callback) {
 					if (callback(param_1, param_2, param_3)) {
 						shouldBlock = true;

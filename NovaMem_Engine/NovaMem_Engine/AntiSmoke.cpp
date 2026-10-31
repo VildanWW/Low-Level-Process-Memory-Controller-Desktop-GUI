@@ -7,11 +7,11 @@ namespace Core {
 		void AntiSmoke::Initialize() {
 			running = true;
 
-			glBeginToken = EventBus::SubscribeGlBegin([this](unsigned int mode) {
+			glBeginToken = Events::EventBus::SubscribeGlBegin([this](unsigned int mode) {
 				return HandleGlBeginAntiSmoke(mode);
 			});
 
-			vertexToken = EventBus::SubscribeGlVertex3F([this](float x, float y, float z) {
+			vertexToken = Events::EventBus::SubscribeGlVertex3F([this](float x, float y, float z) {
 				return HandleGlVertexAntiSmoke(x, y, z);
 			});
 		}
@@ -19,8 +19,8 @@ namespace Core {
 		void AntiSmoke::ShutDown() {
 			running = false;
 
-			EventBus::UnsubscribeGlBegin(glBeginToken);
-			EventBus::UnsubscribeGlVertex3F(vertexToken);
+			Events::EventBus::UnsubscribeGlBegin(glBeginToken);
+			Events::EventBus::UnsubscribeGlVertex3F(vertexToken);
 		}
 
 		bool AntiSmoke::HandleGlBeginAntiSmoke(unsigned int mode) {
