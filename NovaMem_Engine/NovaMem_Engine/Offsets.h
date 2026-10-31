@@ -3,6 +3,8 @@
 
 namespace Core {
 	namespace Offsets {
+		void InitializeOffsets();
+
 		constexpr uintptr_t jumpAddress = 0x1E94C0;
 
 		inline int* airAddress = 0;
@@ -19,7 +21,7 @@ namespace Core {
 		constexpr int bhopKey = static_cast<int>(Hotkeys::Bhop);
 		constexpr unsigned int jumpFlag = static_cast<unsigned int>(GoldSrcButtons::IN_JUMP);
 	};
-
+	
 	namespace GameFunctions {
 		constexpr uintptr_t moveAddress = 0x9B880;
 		constexpr uintptr_t screenFadeAddress = 0xAFCA0;

@@ -1,15 +1,13 @@
 ﻿// dllmain.cpp : Определяет точку входа для приложения DLL.
 #include "pch.h"
+
+#include <mutex>
+#include <condition_variable>
+
 #include "MinHook.h"
-#include "BaseFunctional.h"
 #include "Hooks.h"
 #include "Offsets.h"
-#include "Bhop.h"      
-#include "AntiFlash.h"
-#include "AntiSmoke.h"
-#include <memory>
-#include <vector>
-#include <condition_variable>
+#include "FunctionalsManager.h"
 
 #pragma comment(lib, "opengl32.lib")
 
@@ -29,43 +27,24 @@ namespace Core {
         }
     }
 
-    void InitializeAddressesAndModules(std::vector<std::unique_ptr<Functionals::BaseFunctional>>& functional) {
-        Offsets::clientBase = (uintptr_t)GetModuleHandleA("client.dll");
-        Offsets::hwBase = (uintptr_t)GetModuleHandleA("hw.dll");
-        Offsets::opengl32 = (intptr_t)GetModuleHandleA("opengl32.dll");
-        Offsets::absoluteMoveAddress = Offsets::clientBase + GameFunctions::moveAddress;
-        Offsets::absoluteScreenAddress = Offsets::hwBase + GameFunctions::screenFadeAddress;
-        Offsets::absoluteGlBeginAddress = Offsets::opengl32 + GameFunctions::glBeginAddress;
-        Offsets::absoluteGlVertex3F = Offsets::opengl32 + GameFunctions::glVertex3F;
-        
-        Offsets::absoluteWglSwapBuffers = (uintptr_t)GetProcAddress((HMODULE)Offsets::opengl32, "wglSwapBuffers");
-        
-        Offsets::airAddress = (int*)(Offsets::clientBase + Offsets::jumpAddress);
-        
-        functional.push_back(std::make_unique<Core::Functionals::Bhop>());
-        functional.push_back(std::make_unique<Core::Functionals::AntiFlash>());
-        functional.push_back(std::make_unique<Core::Functionals::AntiSmoke>());
-    }
     DWORD WINAPI MainThread(LPVOID lpParam) {
         MH_Initialize();
-
-        std::vector<std::unique_ptr<Core::Functionals::BaseFunctional>> functional;
-
-        InitializeAddressesAndModules(functional);
-
+        Offsets::InitializeOffsets();
         Hooks::Initialize();
+
+        Functionals::FunctionalsManager functionalManager;
+        functionalManager.InitializeAddressesAndModules();
+        functionalManager.StartWorking();
 
         std::unique_lock<std::mutex> lock(shutdownMutex);
         shutdownSV.wait(lock, []() { return shutDownProgram; });
 
-        for (size_t i = 0; i < functional.size(); i++) {
-            functional[i]->ShutDown();
-        }
+        functionalManager.Shutdown();
 
         Hooks::ShutDown();
         MH_Uninitialize();
-
         FreeLibraryAndExitThread((HMODULE)lpParam, 0);
+        
         return 0;
     }
 }
