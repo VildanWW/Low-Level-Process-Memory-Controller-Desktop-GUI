@@ -22,6 +22,8 @@
 
 # 📚 Содержание NovaMem учебника (Features & Write-ups)
 
+![Архитектура NovaMem Engine](docs/images/6.svg)
+
 ## 🛡️ Функционал читов и игровых модулей
 * 🐇 **Модуль Передвижения (Movement)**
 * [Глава 1. Распрыжка (BunnyHop): Взлом флага земли и магия блока else](./docs/movement/MovementController.md) — *Статус: [Завершено]*
