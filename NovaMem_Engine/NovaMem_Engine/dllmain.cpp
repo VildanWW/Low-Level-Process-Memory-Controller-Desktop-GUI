@@ -29,7 +29,7 @@ namespace Core {
     }
 
     DWORD WINAPI MainThread(LPVOID lpParam) {
-        Utils::JsonSerializer::LoadFromFile();
+        Utils::JsonSerializer::Initialize();
 
         MH_Initialize();
         Offsets::InitializeOffsets();

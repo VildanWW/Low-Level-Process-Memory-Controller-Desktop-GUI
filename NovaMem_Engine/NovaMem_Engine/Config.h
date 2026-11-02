@@ -46,7 +46,7 @@ namespace Core {
 			VisualsStruct visuals;
 
 			bool menuOpen = true;
-			std::string pathJson = "NovaMem_Engine_config.json";
+			std::string pathJson = "";
 		};
 
 		inline ConfigSettings configSettings;

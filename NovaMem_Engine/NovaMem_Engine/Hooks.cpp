@@ -115,6 +115,7 @@ namespace Core {
 			if (!imguiInit) {
 				gameHwnd = WindowFromDC(hdc);
 				ImGui::CreateContext();
+				ImGui::GetIO().IniFilename = nullptr;
 				ImGui_ImplWin32_Init(gameHwnd);
 				ImGui_ImplOpenGL2_Init();
 

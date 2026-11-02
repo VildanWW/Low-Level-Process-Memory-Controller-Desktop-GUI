@@ -11,8 +11,10 @@ namespace Core {
 namespace Core {
 	namespace Utils {
 		class JsonSerializer {
-		public:
+		private:
 			static void LoadFromFile();
+		public:
+			static void Initialize();
 			static void LoadToFile();
 		};
 	}
