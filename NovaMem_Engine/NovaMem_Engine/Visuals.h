@@ -1,6 +1,7 @@
 ﻿#pragma once
-#include "Gui.h"
 #include <string>
+
+#include "Gui.h"
 
 namespace Gui {
 	namespace Menu {

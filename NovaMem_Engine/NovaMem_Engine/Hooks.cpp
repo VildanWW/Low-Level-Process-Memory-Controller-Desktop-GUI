@@ -1,13 +1,15 @@
 ﻿#include "pch.h"
+
+#include <memory>
+#include <imgui_impl_opengl2.h>
+#include <imgui_impl_win32.h>
+
 #include "Hooks.h"
 #include "Offsets.h"
 #include "MinHook.h"
 #include "EventBus.h"
-#include <imgui_impl_opengl2.h>
-#include <imgui_impl_win32.h>
 #include "MenuManager.h"
 #include "Tabs.h"
-#include <memory>
 #include "Config.h"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);

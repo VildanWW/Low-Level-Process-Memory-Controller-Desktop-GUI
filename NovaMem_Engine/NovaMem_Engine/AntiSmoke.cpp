@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
-#include "AntiSmoke.h"
+
 #include <gl/GL.h>
+
+#include "AntiSmoke.h"
 
 namespace Core {
 	namespace Functionals {

@@ -8,6 +8,7 @@
 #include "Hooks.h"
 #include "Offsets.h"
 #include "FunctionalsManager.h"
+#include "JsonSerializer.h"
 
 #pragma comment(lib, "opengl32.lib")
 
@@ -28,6 +29,8 @@ namespace Core {
     }
 
     DWORD WINAPI MainThread(LPVOID lpParam) {
+        Utils::JsonSerializer::LoadFromFile();
+
         MH_Initialize();
         Offsets::InitializeOffsets();
         Hooks::Initialize();
@@ -40,11 +43,12 @@ namespace Core {
         shutdownSV.wait(lock, []() { return shutDownProgram; });
 
         functionalManager.Shutdown();
-
         Hooks::ShutDown();
         MH_Uninitialize();
+
+        Utils::JsonSerializer::LoadToFile();
+
         FreeLibraryAndExitThread((HMODULE)lpParam, 0);
-        
         return 0;
     }
 }

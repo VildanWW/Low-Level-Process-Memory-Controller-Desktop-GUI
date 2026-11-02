@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <vector>
 #include <memory>
+
 #include "MenuManager.h"
 
 namespace Gui {
@@ -31,4 +32,5 @@ namespace Gui {
 		inline MenuManager menuManager;
 	}
 }
+
 

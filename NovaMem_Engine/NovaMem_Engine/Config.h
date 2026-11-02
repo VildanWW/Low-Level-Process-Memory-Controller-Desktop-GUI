@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+#include <string>
+#include <nlohmann/json.hpp>
+
 namespace Core {
 
 	void RequestShutdown();
@@ -43,8 +46,21 @@ namespace Core {
 			VisualsStruct visuals;
 
 			bool menuOpen = true;
+			std::string pathJson = "NovaMem_Engine_config.json";
 		};
 
 		inline ConfigSettings configSettings;
+
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Aim, running);
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Ragebot, running);
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(NoRecoil, running);
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Bhop, running);
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Wh, running);
+
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(CombatStruct, aim, rageBot, noRecoil);
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(MovementStruct, bhop);
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(VisualsStruct, wh);
+
+		NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ConfigSettings, combat, movement, visuals);
 	}
 }

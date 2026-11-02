@@ -1,4 +1,5 @@
 ﻿#include "pch.h"
+
 #include "Offsets.h"
 
 namespace Core {

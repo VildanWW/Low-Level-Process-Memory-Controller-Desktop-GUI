@@ -1,4 +1,5 @@
 ﻿#include "pch.h"
+
 #include "FunctionalsManager.h"
 #include "BaseFunctional.h"
 #include "Bhop.h"

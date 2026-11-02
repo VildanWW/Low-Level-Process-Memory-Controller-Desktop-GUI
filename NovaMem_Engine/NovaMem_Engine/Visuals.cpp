@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
-#include "Visuals.h"
+
 #include <string>
+
+#include "Visuals.h"
 
 namespace Gui {
 	namespace Menu {

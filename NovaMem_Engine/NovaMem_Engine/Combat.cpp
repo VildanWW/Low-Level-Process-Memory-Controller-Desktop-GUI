@@ -1,8 +1,10 @@
 ﻿#include "pch.h"
-#include "Combat.h"
+
 #include <string>
-#include "imgui.h"
 #include <vector>
+
+#include "Combat.h"
+#include "imgui.h"
 
 namespace Gui {
 	namespace Menu {
