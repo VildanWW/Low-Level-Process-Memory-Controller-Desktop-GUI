@@ -41,12 +41,11 @@ namespace Core {
 
         std::unique_lock<std::mutex> lock(shutdownMutex);
         shutdownSV.wait(lock, []() { return shutDownProgram; });
+        Utils::JsonSerializer::LoadToFile();
 
         functionalManager.Shutdown();
         Hooks::ShutDown();
         MH_Uninitialize();
-
-        Utils::JsonSerializer::LoadToFile();
 
         FreeLibraryAndExitThread((HMODULE)lpParam, 0);
         return 0;

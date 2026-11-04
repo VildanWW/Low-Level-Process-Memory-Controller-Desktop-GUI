@@ -1,8 +1,12 @@
 ﻿#include "pch.h"
 
 #include <string>
+#include <imgui.h>
 
 #include "Movement.h"
+#include "Config.h"
+
+using namespace Core::Settings;
 
 namespace Gui {
 	namespace Menu {
@@ -10,6 +14,8 @@ namespace Gui {
 			return "Movement";
 		}
 
-		void Movement::Draw() {}
+		void Movement::Draw() {
+			ImGui::Checkbox("BunnyHop", &configSettings.movement.bhop.running);
+		}
 	}
 }

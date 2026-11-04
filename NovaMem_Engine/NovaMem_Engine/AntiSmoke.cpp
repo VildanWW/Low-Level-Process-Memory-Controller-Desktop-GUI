@@ -3,12 +3,11 @@
 #include <gl/GL.h>
 
 #include "AntiSmoke.h"
+#include "Config.h"
 
 namespace Core {
 	namespace Functionals {
 		void AntiSmoke::Initialize() {
-			running = true;
-
 			glBeginToken = Events::EventBus::SubscribeGlBegin([this](unsigned int mode) {
 				return HandleGlBeginAntiSmoke(mode);
 			});
@@ -19,14 +18,13 @@ namespace Core {
 		}
 
 		void AntiSmoke::ShutDown() {
-			running = false;
 
 			Events::EventBus::UnsubscribeGlBegin(glBeginToken);
 			Events::EventBus::UnsubscribeGlVertex3F(vertexToken);
 		}
 
 		bool AntiSmoke::HandleGlBeginAntiSmoke(unsigned int mode) {
-			if (running && mode == GL_QUADS) {
+			if (Settings::configSettings.visuals.antiSmoke.running && mode == GL_QUADS) {
 				float curcol[4];
 				glGetFloatv(GL_CURRENT_COLOR, curcol);
 
@@ -40,7 +38,7 @@ namespace Core {
 		}
 
 		bool AntiSmoke::HandleGlVertexAntiSmoke(float x, float y, float z) {
-			if (running && bIsSmokeCurrentQuad) { return true; }
+			if (Settings::configSettings.visuals.antiSmoke.running && bIsSmokeCurrentQuad) { return true; }
 			return false;
 		}
 	}

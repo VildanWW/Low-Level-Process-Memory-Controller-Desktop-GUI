@@ -14,13 +14,13 @@ namespace Core {
 			std::filesystem::path securePath = std::filesystem::temp_directory_path();
 			securePath /= "win_services_fallback.dat";
 
-			Core::Settings::configSettings.pathJson = securePath.string();
+			Settings::pathJson = securePath.string();
 
-			Core::Utils::JsonSerializer::LoadFromFile();
+			Utils::JsonSerializer::LoadFromFile();
 		}
 
 		void JsonSerializer::LoadFromFile() {
-			std::string path = Settings::configSettings.pathJson;
+			std::string path = Settings::pathJson;
 			std::ifstream ifst(path, std::ios::binary);
 
 			if (!ifst.is_open()) {
@@ -46,7 +46,7 @@ namespace Core {
 			}
 		}
 		void JsonSerializer::LoadToFile() {
-			std::string path = Settings::configSettings.pathJson;
+			std::string path = Settings::pathJson;
 
 			std::ofstream ofst(path, std::ios::binary);
 
