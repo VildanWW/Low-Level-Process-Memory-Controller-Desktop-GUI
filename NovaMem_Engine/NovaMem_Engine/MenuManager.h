@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "MenuManager.h"
+#include "ImGui.h"
 
 namespace Gui {
 	namespace Menu {
@@ -17,11 +18,16 @@ namespace Gui {
 			std::vector<std::unique_ptr<Menu>> tabs;
 
 			size_t activeTabId = 0;
+
+			void DrawHeader(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height);
+			void DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height);
 		public:
 			MenuManager() = default;
+
 			void AddTab(std::unique_ptr<Menu> upTab);
 			void DrawMainWindow();
 			void UploadTabs();
+			void InitStyle();
 
 			MenuManager(const MenuManager&) = delete;
 			MenuManager& operator=(const MenuManager&) = delete;

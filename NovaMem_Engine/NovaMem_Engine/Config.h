@@ -27,10 +27,10 @@ namespace Core {
 			bool running = false;
 		};
 		struct AntiFlash {
-			bool running = false;
+			bool running = true;
 		};
 		struct AntiSmoke {
-			bool running = false;
+			bool running = true;
 		};
 		// Misc
 

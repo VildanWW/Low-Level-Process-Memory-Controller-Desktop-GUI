@@ -120,6 +120,7 @@ namespace Core {
 				ImGui_ImplOpenGL2_Init();
 
 				Gui::Menu::menuManager.UploadTabs();
+				Gui::Menu::menuManager.InitStyle();
 
 				imguiInit = true;
 			}

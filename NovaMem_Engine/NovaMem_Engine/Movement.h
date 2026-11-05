@@ -6,6 +6,7 @@
 namespace Gui {
 	namespace Menu {
 		class Movement : public Menu {
+		public:
 			virtual std::string GetName() const override;
 			virtual void Draw() override;
 		};

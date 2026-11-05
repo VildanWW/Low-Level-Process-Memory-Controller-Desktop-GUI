@@ -15,7 +15,20 @@ namespace Gui {
 		}
 
 		void Movement::Draw() {
-			ImGui::Checkbox("BunnyHop", &configSettings.movement.bhop.running);
+			
+			ImVec2 screenSize = ImGui::GetIO().DisplaySize;
+
+			std::vector<std::string> subTabs{ "Bhop" };
+
+			ImGui::BeginChild("Movement", ImVec2(screenSize.x * 0.08f, 0), true);
+			
+			for (int i = 0; i < subTabs.size(); i++) {
+				bool isSelected = (currentTab == i);
+				if (ImGui::Selectable(subTabs[i].c_str(), isSelected)) {
+					currentTab = i;
+				}
+			}
+			ImGui::EndChild();
 		}
 	}
 }

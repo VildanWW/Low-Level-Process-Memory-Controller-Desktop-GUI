@@ -7,6 +7,7 @@
 namespace Gui {
 	namespace Menu {
 		class Combat : public Menu {
+		public:
 			virtual std::string GetName() const override;
 
 			virtual void Draw() override;
