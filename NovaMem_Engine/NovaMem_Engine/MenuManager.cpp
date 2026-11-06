@@ -54,10 +54,60 @@ namespace Gui {
             style.Colors[ImGuiCol_ButtonHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.1f);
             style.Colors[ImGuiCol_ButtonActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.2f);
         }
+           
+        void MenuManager::DrawHeader(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
+            ImVec2 headerTopLeft = windowPos;
+            ImVec2 headerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
 
-        void MenuManager::DrawHeader(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {}
+            float rounding = ImGui::GetStyle().WindowRounding;
+
+            drawList->AddRectFilled(headerTopLeft, headerBottomRight, ImGui::ColorConvertFloat4ToU32(ImVec4(0.694f, 0.549f, 0.803f, 1.00f)), rounding, ImDrawFlags_RoundCornersTop);
         
-        void MenuManager::DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {}
+            ImGui::SetCursorPos(ImVec2(windowSize.x*0.01f, (height - ImGui::GetTextLineHeightWithSpacing()) * 0.5f));
+            ImGui::AlignTextToFramePadding();
+
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.243f, 0.137f, 0.321f, 1.00f));
+            ImGui::Text("NovaMem Engine");
+            ImGui::PopStyleColor();
+
+            float logoWidth = ImGui::CalcTextSize("NovaMem Engine").x;
+            float startPadding = windowSize.x * 0.01f;
+            ImGui::SameLine(startPadding + logoWidth);
+
+            for (int i = 0; i < tabs.size(); i++) {
+                if (activeTabId == i) {
+                    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.243f, 0.137f, 0.321f, 1.00f));
+                }
+                else {
+                    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.400f, 0.300f, 0.500f, 0.60f));
+                }
+
+                if (ImGui::Button(tabs[i]->GetName().c_str())) {
+                    activeTabId = i;
+                }
+                ImGui::PopStyleColor();
+
+                if (i < tabs.size() - 1) {
+                    ImGui::SameLine(0.0f, windowSize.y * 0.015f);
+                }
+            }
+
+            float txtSize = ImGui::GetFontSize();
+            ImVec2 xButtonSize = ImVec2(txtSize + ImGui::GetStyle().FramePadding.x * 2.0f, txtSize + ImGui::GetStyle().FramePadding.y * 2.0f);
+            
+            ImGui::SameLine(windowSize.x - xButtonSize.x);
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.243f, 0.137f, 0.321f, 1.00f));
+            
+            if (ImGui::Button("X", xButtonSize)) {
+                Core::Settings::configSettings.menuOpen = false;
+            }
+
+            ImGui::PopStyleColor();
+        }
+        
+        void MenuManager::DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
+        
+        }
 
         void MenuManager::DrawMainWindow() {
             ImVec2 screenSize = ImGui::GetIO().DisplaySize;
