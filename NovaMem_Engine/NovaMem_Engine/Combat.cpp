@@ -5,6 +5,7 @@
 
 #include "Combat.h"
 #include "imgui.h"
+#include "Theme.h"
 
 namespace Gui {
 	namespace Menu {
@@ -16,7 +17,7 @@ namespace Gui {
             ImVec2 screenSize = ImGui::GetIO().DisplaySize;
             std::vector<std::string> subTabs{ "Aimbot", "Ragebot", "NoRecoil" };
 
-            ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.458f, 0.145f, 0.690f, 1.00f));
+            ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::ChildBg);
 
             ImGui::BeginChild("Combat_Sidebar", ImVec2(120.0f, 0), true);
 

@@ -4,6 +4,7 @@
 #include "ImGui.h"
 #include "Tabs.h"
 #include "Config.h"
+#include "Theme.h"
 
 namespace Gui {
 	namespace Menu {
@@ -29,44 +30,44 @@ namespace Gui {
             style.ItemSpacing = ImVec2(fontSize * 0.5f, fontSize * 0.40f);
 
             // 1. Center (Window background): #3E2352
-            style.Colors[ImGuiCol_WindowBg] = ImVec4(0.243f, 0.137f, 0.321f, 1.00f);
+            style.Colors[ImGuiCol_WindowBg] = Palette::Background;
 
             // 2. Up/down (Lines and headers): #B18CCD
-            style.Colors[ImGuiCol_Separator] = ImVec4(0.694f, 0.549f, 0.803f, 1.00f);
-            style.Colors[ImGuiCol_SeparatorHovered] = ImVec4(0.694f, 0.549f, 0.803f, 1.00f);
-            style.Colors[ImGuiCol_SeparatorActive] = ImVec4(0.694f, 0.549f, 0.803f, 1.00f);
-            style.Colors[ImGuiCol_Border] = ImVec4(0.694f, 0.549f, 0.803f, 1.00f);
+            style.Colors[ImGuiCol_Separator] = Palette::Accent;
+            style.Colors[ImGuiCol_SeparatorHovered] = Palette::Accent;
+            style.Colors[ImGuiCol_SeparatorActive] = Palette::Accent;
+            style.Colors[ImGuiCol_Border] = Palette::Accent;
 
             // 3. Left (sets the default color for all child windows): #7525B0
-            style.Colors[ImGuiCol_ChildBg] = ImVec4(0.458f, 0.145f, 0.690f, 1.00f);
+            style.Colors[ImGuiCol_ChildBg] = Palette::ChildBg;
 
             // Color of text (white)
-            style.Colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
-            style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.8f, 0.8f, 0.8f, 0.6f);
+            style.Colors[ImGuiCol_Text] = Palette::TextMain;
+            style.Colors[ImGuiCol_TextDisabled] = Palette::TextDisabled;
 
             // Colors for 3 states headers
-            style.Colors[ImGuiCol_Header] = ImVec4(0.694f, 0.549f, 0.803f, 1.00f);
-            style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.694f, 0.549f, 0.803f, 0.5f);
-            style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.694f, 0.549f, 0.803f, 1.00f);
+            style.Colors[ImGuiCol_Header] = Palette::Accent;
+            style.Colors[ImGuiCol_HeaderHovered] = Palette::AccentHovered;
+            style.Colors[ImGuiCol_HeaderActive] = Palette::Accent;
 
             // Colors for 3 states button
-            style.Colors[ImGuiCol_Button] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
-            style.Colors[ImGuiCol_ButtonHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.1f);
-            style.Colors[ImGuiCol_ButtonActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.2f);
+            style.Colors[ImGuiCol_Button] = Palette::BtnTransperent;
+            style.Colors[ImGuiCol_ButtonHovered] = Palette::BtnHovered;
+            style.Colors[ImGuiCol_ButtonActive] = Palette::BtnActive;
         }
-           
+
         void MenuManager::DrawHeader(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
             ImVec2 headerTopLeft = windowPos;
             ImVec2 headerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
 
             float rounding = ImGui::GetStyle().WindowRounding;
 
-            drawList->AddRectFilled(headerTopLeft, headerBottomRight, ImGui::ColorConvertFloat4ToU32(ImVec4(0.694f, 0.549f, 0.803f, 1.00f)), rounding, ImDrawFlags_RoundCornersTop);
+            drawList->AddRectFilled(headerTopLeft, headerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersTop);
         
             ImGui::SetCursorPos(ImVec2(windowSize.x*0.01f, (height - ImGui::GetTextLineHeightWithSpacing()) * 0.5f));
             ImGui::AlignTextToFramePadding();
 
-            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.243f, 0.137f, 0.321f, 1.00f));
+            ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
             ImGui::Text("NovaMem Engine");
             ImGui::PopStyleColor();
 
@@ -76,10 +77,10 @@ namespace Gui {
 
             for (int i = 0; i < tabs.size(); i++) {
                 if (activeTabId == i) {
-                    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.243f, 0.137f, 0.321f, 1.00f));
+                    ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
                 }
                 else {
-                    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.400f, 0.300f, 0.500f, 0.60f));
+                    ImGui::PushStyleColor(ImGuiCol_Text, Palette::TextMuted);
                 }
 
                 if (ImGui::Button(tabs[i]->GetName().c_str())) {
@@ -96,7 +97,7 @@ namespace Gui {
             ImVec2 xButtonSize = ImVec2(txtSize + ImGui::GetStyle().FramePadding.x * 2.0f, txtSize + ImGui::GetStyle().FramePadding.y * 2.0f);
             
             ImGui::SameLine(windowSize.x - xButtonSize.x);
-            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.243f, 0.137f, 0.321f, 1.00f));
+            ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
             
             if (ImGui::Button("X", xButtonSize)) {
                 Core::Settings::configSettings.menuOpen = false;
@@ -106,7 +107,12 @@ namespace Gui {
         }
         
         void MenuManager::DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
-        
+            //ImVec2 footerTopLeft = windowPos;
+            //ImVec2 footerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
+
+            //float rounding = ImGui::GetStyle().WindowRounding;
+
+            //drawList->AddRectFilled(footerTopLeft, footerBottomRight, ImGui::ColorConvertFloat4ToU32(ImVec))
         }
 
         void MenuManager::DrawMainWindow() {
@@ -146,7 +152,7 @@ namespace Gui {
 
             ImGui::SetCursorPosY(titleBarHeight);
 
-            ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.0f, 0.0f, 0.0f, 0.00f));
+            ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::BtnTransperent);
 
             float contentHeight = windowSize.y - titleBarHeight - footerHeight;
 

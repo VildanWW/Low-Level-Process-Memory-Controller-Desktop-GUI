@@ -173,6 +173,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="FunctionalsManager.h" />
     <ClInclude Include="Tabs.h" />
+    <ClInclude Include="Theme.h" />
     <ClInclude Include="Visuals.h" />
   </ItemGroup>
   <ItemGroup>
