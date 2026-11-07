@@ -4,6 +4,7 @@
 #include <imgui_impl_opengl2.h>
 #include <imgui_impl_win32.h>
 
+#include "IconsFontAwesome5.h"
 #include "Hooks.h"
 #include "Offsets.h"
 #include "MinHook.h"
@@ -11,6 +12,7 @@
 #include "MenuManager.h"
 #include "Tabs.h"
 #include "Config.h"
+#include "FontSerializer.h"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -111,16 +113,19 @@ namespace Core {
 		BOOL __stdcall hk_WglSwapBuffers(HDC hdc) {
 			if (unloadingFromGame) return o_WglSwapBuffers(hdc);
 			static bool imguiInit = false;
+			static bool fontsInit = false;
 
 			if (!imguiInit) {
 				gameHwnd = WindowFromDC(hdc);
 				ImGui::CreateContext();
 				ImGui::GetIO().IniFilename = nullptr;
+
 				ImGui_ImplWin32_Init(gameHwnd);
 				ImGui_ImplOpenGL2_Init();
 
 				Gui::Menu::menuManager.UploadTabs();
 				Gui::Menu::menuManager.InitStyle();
+				Gui::Fonts::FontInitialize();
 
 				imguiInit = true;
 			}
@@ -136,6 +141,11 @@ namespace Core {
 			ImGui_ImplOpenGL2_NewFrame();
 			ImGui_ImplWin32_NewFrame();
 			ImGui::NewFrame();
+
+			//if (!fontsInit) {
+			//	Gui::Fonts::FontInitialize();
+			//	fontsInit = true;
+			//}
 
 			Gui::Menu::menuManager.DrawMainWindow();
 

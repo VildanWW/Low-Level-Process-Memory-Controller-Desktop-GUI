@@ -5,6 +5,7 @@
 #include "Tabs.h"
 #include "Config.h"
 #include "Theme.h"
+#include "IconsFontAwesome5.h"
 
 namespace Gui {
 	namespace Menu {
@@ -99,7 +100,7 @@ namespace Gui {
             ImGui::SameLine(windowSize.x - xButtonSize.x);
             ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
             
-            if (ImGui::Button("X", xButtonSize)) {
+            if (ImGui::Button(ICON_FA_TIMES, xButtonSize)) {
                 Core::Settings::configSettings.menuOpen = false;
             }
 
@@ -107,20 +108,36 @@ namespace Gui {
         }
         
         void MenuManager::DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
-            //ImVec2 footerTopLeft = windowPos;
-            //ImVec2 footerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
+            ImVec2 footerTopLeft = windowPos;
+            ImVec2 footerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
 
-            //float rounding = ImGui::GetStyle().WindowRounding;
+            float rounding = ImGui::GetStyle().WindowRounding;
 
-            //drawList->AddRectFilled(footerTopLeft, footerBottomRight, ImGui::ColorConvertFloat4ToU32(ImVec))
+            drawList->AddRectFilled(footerTopLeft, footerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersTop);
+
+            ImGui::SetCursorPos(ImVec2(windowSize.x * 0.01f, (windowSize.y - height + ImGui::GetTextLineHeightWithSpacing()*0.2)));
+            
+            ImGui::PushStyleColor(ImGuiCol_Button, Palette::ChildBg);
+            if (ImGui::Button(ICON_FA_COG)) {
+                // логика настроек
+            }
+
+            ImGui::SameLine();
+
+            if (ImGui::Button(ICON_FA_SEARCH)) {
+                // логика поиска
+            }
+
+            ImGui::PopStyleColor();
+
         }
 
         void MenuManager::DrawMainWindow() {
             ImVec2 screenSize = ImGui::GetIO().DisplaySize;
-            ImGui::SetNextWindowSize(ImVec2(screenSize.x * 0.4f, screenSize.y * 0.5f), ImGuiCond_FirstUseEver);
+            ImGui::SetNextWindowSize(ImVec2(screenSize.x * 0.6f, screenSize.y * 0.6f), ImGuiCond_FirstUseEver);
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f)); // first aArgument needed to spaces set new values, second argument - spaces set 0 for 4 sides
-            ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse;
+            ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar;;
 
             bool isOpen = ImGui::Begin("NovaMem Engine", &Core::Settings::configSettings.menuOpen, windowFlags);
             

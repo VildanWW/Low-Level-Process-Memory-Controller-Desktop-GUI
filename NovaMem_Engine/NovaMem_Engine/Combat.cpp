@@ -19,7 +19,7 @@ namespace Gui {
 
             ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::ChildBg);
 
-            ImGui::BeginChild("Combat_Sidebar", ImVec2(120.0f, 0), true);
+            ImGui::BeginChild("Combat_Sidebar", ImVec2(screenSize.x * 0.08f, 0), true);
 
             for (int i = 0; i < subTabs.size(); i++) {
                 bool isSelected = (currentTab == i);
@@ -27,7 +27,7 @@ namespace Gui {
                     currentTab = i;
                 }
             }
-
+            
             ImGui::EndChild();
             ImGui::PopStyleColor();
         }

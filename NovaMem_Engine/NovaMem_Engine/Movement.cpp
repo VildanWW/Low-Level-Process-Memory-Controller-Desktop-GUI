@@ -30,6 +30,7 @@ namespace Gui {
 					currentTab = i;
 				}
 			}
+
 			ImGui::EndChild();
 			ImGui::PopStyleColor();
 		}
