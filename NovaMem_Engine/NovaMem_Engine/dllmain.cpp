@@ -3,14 +3,15 @@
 
 #include <mutex>
 #include <condition_variable>
+#include <thread>
+#include "spdlog/sinks/msvc_sink.h"
+#include <spdlog/spdlog.h>
 
 #include "MinHook.h"
 #include "Hooks.h"
 #include "Offsets.h"
 #include "FunctionalsManager.h"
 #include "JsonSerializer.h"
-
-#pragma comment(lib, "opengl32.lib")
 
 namespace Core {
 
@@ -28,7 +29,15 @@ namespace Core {
         }
     }
 
+    void InitializeLogger() {
+        auto msvc_sink = std::make_shared<spdlog::sinks::msvc_sink_mt>();
+        auto logger = std::make_shared<spdlog::logger>("msvc_logger", msvc_sink);
+        spdlog::set_default_logger(logger);
+        spdlog::set_level(spdlog::level::trace);
+    }
+
     DWORD WINAPI MainThread(LPVOID lpParam) {
+        InitializeLogger();
         Utils::JsonSerializer::Initialize();
 
         MH_Initialize();
@@ -41,6 +50,14 @@ namespace Core {
 
         std::unique_lock<std::mutex> lock(shutdownMutex);
         shutdownSV.wait(lock, []() { return shutDownProgram; });
+
+        Hooks::unloadingFromGame = true;
+
+        while (Hooks::activeHooksCount > 0) {
+            std::this_thread::yield();
+        }
+
+        spdlog::info("Active hooks count: {}", Hooks::activeHooksCount.load());
         Utils::JsonSerializer::LoadToFile();
 
         functionalManager.Shutdown();

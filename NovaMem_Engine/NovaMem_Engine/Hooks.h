@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#include <atomic>
+
 namespace Core {
 	namespace Hooks {
 		typedef unsigned int(__fastcall* t_MoveHandler)(char param_1);
@@ -25,6 +27,7 @@ namespace Core {
 
 		inline HWND gameHwnd = nullptr;
 		inline bool unloadingFromGame = false;
+		inline std::atomic<int> activeHooksCount{ 0 };
 
 		void Initialize();
 		void ShutDown();

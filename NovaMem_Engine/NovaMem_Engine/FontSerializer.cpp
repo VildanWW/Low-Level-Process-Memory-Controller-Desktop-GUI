@@ -26,23 +26,35 @@ namespace Gui {
 				spdlog::warn("Arial.ttf not found! Fallback to ImGui default font");
 			}
 
-			const char* pathTTF = "fa-solid-900.ttf";
+			char dllPath[MAX_PATH];
+			HMODULE hModule = NULL;
 
-			if (std::filesystem::exists(pathTTF)) {
-				static const ImWchar iconsRanges[] = { 0xE005, 0xF8FF, 0 };
+			// Узнаем, где лежит наша скомпилированная DLL
+			GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
+							   GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+							   (LPCSTR)&FontInitialize, &hModule);
+			GetModuleFileNameA(hModule, dllPath, MAX_PATH);
+
+			// Получаем путь к папке Debug (где лежит DLL и твой файл шрифта)
+			std::filesystem::path p(dllPath);
+			std::filesystem::path dllDir = p.parent_path();
+
+			// Склеиваем путь: "папка_с_dll\fa-solid-900.ttf"
+			std::filesystem::path fullPathTTF = dllDir / "fa-solid-900.ttf";
+
+			if (std::filesystem::exists(fullPathTTF)) {
+				static const ImWchar iconsRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
 				ImFontConfig iconsConfig;
 				iconsConfig.MergeMode = true;
 				iconsConfig.PixelSnapH = true;
 				iconsConfig.GlyphMinAdvanceX = calculatedFontSize;
 				
-				io.Fonts->AddFontFromFileTTF(pathTTF, calculatedFontSize, &iconsConfig, iconsRanges);
+				io.Fonts->AddFontFromFileTTF(fullPathTTF.string().c_str(), calculatedFontSize, &iconsConfig, iconsRanges);
 				spdlog::info("FontAwesome (fa-solid-900.ttf) successfully loaded.");
 			}
 			else {
 				spdlog::warn("fa-solid-900.ttf is missing! Menu icons will not be rendered.");
 			}
-
-			io.Fonts->Build();
 		}
 	}
 }

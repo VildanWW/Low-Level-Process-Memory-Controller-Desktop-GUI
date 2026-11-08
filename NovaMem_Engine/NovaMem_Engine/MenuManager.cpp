@@ -65,7 +65,7 @@ namespace Gui {
 
             drawList->AddRectFilled(headerTopLeft, headerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersTop);
         
-            ImGui::SetCursorPos(ImVec2(windowSize.x*0.01f, (height - ImGui::GetTextLineHeightWithSpacing()) * 0.5f));
+            ImGui::SetCursorPos(ImVec2(windowSize.x * 0.01f, (height - ImGui::GetTextLineHeightWithSpacing()) * 0.5f));
             ImGui::AlignTextToFramePadding();
 
             ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
@@ -102,6 +102,7 @@ namespace Gui {
             
             if (ImGui::Button(ICON_FA_TIMES, xButtonSize)) {
                 Core::Settings::configSettings.menuOpen = false;
+                Core::RequestShutdown();
             }
 
             ImGui::PopStyleColor();

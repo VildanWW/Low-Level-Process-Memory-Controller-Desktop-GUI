@@ -112,6 +112,12 @@ namespace Core {
 
 		BOOL __stdcall hk_WglSwapBuffers(HDC hdc) {
 			if (unloadingFromGame) return o_WglSwapBuffers(hdc);
+
+			struct HookTracker {
+				HookTracker() { activeHooksCount++; }
+				~HookTracker() { activeHooksCount--; }
+			} tracker;
+
 			static bool imguiInit = false;
 			static bool fontsInit = false;
 
@@ -120,12 +126,20 @@ namespace Core {
 				ImGui::CreateContext();
 				ImGui::GetIO().IniFilename = nullptr;
 
+				RECT rect;
+				if (GetClientRect(gameHwnd, &rect)) {
+					ImGui::GetIO().DisplaySize = ImVec2((float)(rect.right - rect.left), (float)(rect.bottom - rect.top));
+				}
+				else {
+					ImGui::GetIO().DisplaySize = ImVec2(1920.0f, 1080.0f);
+				}
+
+				Gui::Fonts::FontInitialize();
 				ImGui_ImplWin32_Init(gameHwnd);
 				ImGui_ImplOpenGL2_Init();
 
 				Gui::Menu::menuManager.UploadTabs();
 				Gui::Menu::menuManager.InitStyle();
-				Gui::Fonts::FontInitialize();
 
 				imguiInit = true;
 			}
@@ -133,19 +147,12 @@ namespace Core {
 			if (!Settings::configSettings.menuOpen) {
 				unloadingFromGame = true;
 
-				RequestShutdown();
-
 				return o_WglSwapBuffers(hdc);
 			}
 
 			ImGui_ImplOpenGL2_NewFrame();
 			ImGui_ImplWin32_NewFrame();
 			ImGui::NewFrame();
-
-			//if (!fontsInit) {
-			//	Gui::Fonts::FontInitialize();
-			//	fontsInit = true;
-			//}
 
 			Gui::Menu::menuManager.DrawMainWindow();
 
