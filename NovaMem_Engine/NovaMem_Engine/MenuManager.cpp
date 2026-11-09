@@ -60,11 +60,18 @@ namespace Gui {
         void MenuManager::DrawHeader(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
             ImVec2 headerTopLeft = windowPos;
             ImVec2 headerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
-
             float rounding = ImGui::GetStyle().WindowRounding;
-
             drawList->AddRectFilled(headerTopLeft, headerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersTop);
         
+            float fontSize = ImGui::GetFontSize();
+            float framePaddingY = ImGui::GetStyle().FramePadding.y;
+
+            float textHeight = ImGui::GetTextLineHeight();
+            float textCenterY = windowPos.y + (height - textHeight) * 0.5f;
+
+            float buttonHeight = fontSize + framePaddingY * 2.0f;
+            float buttonCenterY = windowPos.y + (height - buttonHeight) * 0.5f;
+
             ImGui::SetCursorPos(ImVec2(windowSize.x * 0.01f, (height - ImGui::GetTextLineHeightWithSpacing()) * 0.5f));
             ImGui::AlignTextToFramePadding();
 
@@ -74,7 +81,7 @@ namespace Gui {
 
             float logoWidth = ImGui::CalcTextSize("NovaMem Engine").x;
             float startPadding = windowSize.x * 0.01f;
-            ImGui::SameLine(startPadding + logoWidth);
+            ImGui::SetCursorScreenPos(ImVec2(windowPos.x + startPadding + logoWidth + windowSize.x * 0.03f, buttonCenterY));
 
             for (int i = 0; i < tabs.size(); i++) {
                 if (activeTabId == i) {
@@ -90,14 +97,14 @@ namespace Gui {
                 ImGui::PopStyleColor();
 
                 if (i < tabs.size() - 1) {
-                    ImGui::SameLine(0.0f, windowSize.y * 0.015f);
+                    float nextX = ImGui::GetItemRectMax().x + windowSize.x * 0.015f;
+                    ImGui::SetCursorScreenPos(ImVec2(nextX, buttonCenterY));
                 }
             }
 
-            float txtSize = ImGui::GetFontSize();
-            ImVec2 xButtonSize = ImVec2(txtSize + ImGui::GetStyle().FramePadding.x * 2.0f, txtSize + ImGui::GetStyle().FramePadding.y * 2.0f);
+            ImVec2 xButtonSize = ImVec2(fontSize + ImGui::GetStyle().FramePadding.x * 2.0f, buttonHeight);
+            ImGui::SetCursorScreenPos(ImVec2(windowPos.x + windowSize.x - xButtonSize.x - windowSize.x * 0.02f, buttonCenterY));
             
-            ImGui::SameLine(windowSize.x - xButtonSize.x);
             ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
             
             if (ImGui::Button(ICON_FA_TIMES, xButtonSize)) {
@@ -107,38 +114,36 @@ namespace Gui {
 
             ImGui::PopStyleColor();
         }
-        
+
         void MenuManager::DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height) {
-            ImVec2 footerTopLeft = windowPos;
-            ImVec2 footerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
-
+            ImVec2 footerTopLeft = ImVec2(windowPos.x, windowPos.y + windowSize.y - height);
+            ImVec2 footerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + windowSize.y);
             float rounding = ImGui::GetStyle().WindowRounding;
+            drawList->AddRectFilled(footerTopLeft, footerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersBottom);
 
-            drawList->AddRectFilled(footerTopLeft, footerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersTop);
+            float buttonHeight = ImGui::GetFontSize() + ImGui::GetStyle().FramePadding.y * 2.0f;
+            float centerY = footerTopLeft.y + (height - buttonHeight) * 0.5f;
 
-            ImGui::SetCursorPos(ImVec2(windowSize.x * 0.01f, (windowSize.y - height + ImGui::GetTextLineHeightWithSpacing()*0.2)));
-            
+            ImGui::SetCursorScreenPos(ImVec2(windowPos.x + windowSize.x * 0.02f, centerY));
+
             ImGui::PushStyleColor(ImGuiCol_Button, Palette::ChildBg);
             if (ImGui::Button(ICON_FA_COG)) {
                 // логика настроек
             }
 
-            ImGui::SameLine();
-
+            ImGui::SetCursorScreenPos(ImVec2(ImGui::GetItemRectMax().x + windowSize.x * 0.01f, centerY));
             if (ImGui::Button(ICON_FA_SEARCH)) {
                 // логика поиска
             }
 
             ImGui::PopStyleColor();
-
         }
-
         void MenuManager::DrawMainWindow() {
             ImVec2 screenSize = ImGui::GetIO().DisplaySize;
             ImGui::SetNextWindowSize(ImVec2(screenSize.x * 0.6f, screenSize.y * 0.6f), ImGuiCond_FirstUseEver);
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f)); // first aArgument needed to spaces set new values, second argument - spaces set 0 for 4 sides
-            ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar;;
+            ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar;
 
             bool isOpen = ImGui::Begin("NovaMem Engine", &Core::Settings::configSettings.menuOpen, windowFlags);
             
@@ -168,13 +173,15 @@ namespace Gui {
 
             DrawHeader(drawList, windowPos, windowSize, titleBarHeight);
 
-            ImGui::SetCursorPosY(titleBarHeight);
+            float pixelY = windowSize.y * (1.0f / windowSize.y);
+
+            ImGui::SetCursorPosY(titleBarHeight- pixelY);
 
             ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::BtnTransperent);
 
             float contentHeight = windowSize.y - titleBarHeight - footerHeight;
 
-            ImGui::BeginChild("MainContent", ImVec2(windowSize.x, contentHeight), false, ImGuiWindowFlags_NoBackground);
+            ImGui::BeginChild("MainContent", ImVec2(windowSize.x, contentHeight + (pixelY * 2.0f)), false, ImGuiWindowFlags_NoBackground);
 
             if (!tabs.empty() && activeTabId < tabs.size()) {
                 tabs[activeTabId]->Draw();
