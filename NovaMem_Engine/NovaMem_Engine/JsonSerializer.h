@@ -3,12 +3,6 @@
 #include "string"
 
 namespace Core {
-	namespace Settings {
-		class ConfigSettings;
-	}
-}
-
-namespace Core {
 	namespace Utils {
 		class JsonSerializer {
 		private:

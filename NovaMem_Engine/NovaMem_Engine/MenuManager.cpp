@@ -71,9 +71,7 @@ namespace Gui {
 
             float buttonHeight = fontSize + framePaddingY * 2.0f;
             float buttonCenterY = windowPos.y + (height - buttonHeight) * 0.5f;
-
-            ImGui::SetCursorPos(ImVec2(windowSize.x * 0.01f, (height - ImGui::GetTextLineHeightWithSpacing()) * 0.5f));
-            ImGui::AlignTextToFramePadding();
+            ImGui::SetCursorScreenPos(ImVec2(windowPos.x + windowSize.x * 0.01f, textCenterY));
 
             ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
             ImGui::Text("NovaMem Engine");
@@ -84,17 +82,28 @@ namespace Gui {
             ImGui::SetCursorScreenPos(ImVec2(windowPos.x + startPadding + logoWidth + windowSize.x * 0.03f, buttonCenterY));
 
             for (int i = 0; i < tabs.size(); i++) {
-                if (activeTabId == i) {
-                    ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
-                }
-                else {
-                    ImGui::PushStyleColor(ImGuiCol_Text, Palette::TextMuted);
-                }
+                std::string nameTab = tabs[i]->GetName();
+                const char* itemTab = tabs[i]->GetItem();
+                float spacing = windowSize.x * 0.005f;
 
-                if (ImGui::Button(tabs[i]->GetName().c_str())) {
+                ImVec2 nameSize = ImGui::CalcTextSize(nameTab.c_str());
+                ImVec2 iconSize = ImGui::CalcTextSize(itemTab);
+                ImVec2 totalSize(nameSize.x + spacing + iconSize.x, buttonHeight);
+
+                ImVec2 cursorScreenPos = ImGui::GetCursorScreenPos();
+
+                if (ImGui::InvisibleButton(nameTab.c_str(), totalSize)) {
                     activeTabId = i;
                 }
-                ImGui::PopStyleColor();
+
+                float textY = cursorScreenPos.y + (buttonHeight - nameSize.y) * 0.5f;
+
+                ImU32 textColor = (activeTabId == i) ? ImGui::GetColorU32(Palette::Background) : ImGui::GetColorU32(Palette::TextMuted);
+
+                drawList->AddText(ImVec2(cursorScreenPos.x, textY), textColor, nameTab.c_str());
+
+                ImU32 iconColor = ImGui::GetColorU32(ImVec4(Palette::ItemTabs));
+                drawList->AddText(ImVec2(cursorScreenPos.x + nameSize.x + spacing, textY), iconColor, itemTab);
 
                 if (i < tabs.size() - 1) {
                     float nextX = ImGui::GetItemRectMax().x + windowSize.x * 0.015f;
@@ -128,16 +137,17 @@ namespace Gui {
 
             ImGui::PushStyleColor(ImGuiCol_Button, Palette::ChildBg);
             if (ImGui::Button(ICON_FA_COG)) {
-                // логика настроек
+                // Logic settings
             }
 
             ImGui::SetCursorScreenPos(ImVec2(ImGui::GetItemRectMax().x + windowSize.x * 0.01f, centerY));
             if (ImGui::Button(ICON_FA_SEARCH)) {
-                // логика поиска
+                // logic search
             }
 
             ImGui::PopStyleColor();
         }
+        
         void MenuManager::DrawMainWindow() {
             ImVec2 screenSize = ImGui::GetIO().DisplaySize;
             ImGui::SetNextWindowSize(ImVec2(screenSize.x * 0.6f, screenSize.y * 0.6f), ImGuiCond_FirstUseEver);

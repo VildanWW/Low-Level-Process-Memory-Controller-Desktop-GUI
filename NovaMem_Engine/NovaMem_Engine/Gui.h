@@ -12,6 +12,7 @@ namespace Gui {
 
 			virtual void Draw() = 0;
 			virtual std::string GetName() const = 0;
+			virtual const char* GetItem() const = 0;
 
 			Menu(const Menu&) = delete;
 			Menu& operator=(const Menu&) = delete;

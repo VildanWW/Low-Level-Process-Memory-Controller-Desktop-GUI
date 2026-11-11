@@ -8,6 +8,7 @@ namespace Gui {
 		class Misc : public Menu {
 		public:
 			virtual std::string GetName() const override;
+			virtual const char* GetItem() const override;
 
 			virtual void Draw() override;
 		};

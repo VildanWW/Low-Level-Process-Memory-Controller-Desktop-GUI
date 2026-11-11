@@ -29,17 +29,14 @@ namespace Gui {
 			char dllPath[MAX_PATH];
 			HMODULE hModule = NULL;
 
-			// Узнаем, где лежит наша скомпилированная DLL
 			GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
 							   GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
 							   (LPCSTR)&FontInitialize, &hModule);
 			GetModuleFileNameA(hModule, dllPath, MAX_PATH);
 
-			// Получаем путь к папке Debug (где лежит DLL и твой файл шрифта)
 			std::filesystem::path p(dllPath);
 			std::filesystem::path dllDir = p.parent_path();
 
-			// Склеиваем путь: "папка_с_dll\fa-solid-900.ttf"
 			std::filesystem::path fullPathTTF = dllDir / "fa-solid-900.ttf";
 
 			if (std::filesystem::exists(fullPathTTF)) {

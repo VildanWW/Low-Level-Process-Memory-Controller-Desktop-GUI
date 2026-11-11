@@ -19,5 +19,7 @@ namespace Gui {
 		static inline const ImVec4 BtnTransperent = ImVec4(0.000f, 0.000f, 0.000f, 0.00f); // #000000 with 0% alpha (Fully transparent button background)
 		static inline const ImVec4 BtnHovered = ImVec4(1.000f, 1.000f, 1.000f, 0.10f); // #FFFFFF with 10% alpha (White overlay on hover)
 		static inline const ImVec4 BtnActive = ImVec4(1.000f, 1.000f, 1.000f, 0.20f); // #FFFFFF with 20% alpha (White overlay on click)
+
+		static inline const ImVec4 ItemTabs = ImVec4(0.5255f, 0.0000f, 0.9137f, 1.0000f); // #8600E9 Light violet
 	};
 }

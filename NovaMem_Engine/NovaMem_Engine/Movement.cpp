@@ -3,6 +3,7 @@
 #include <string>
 #include <imgui.h>
 
+#include "IconsFontAwesome5.h"
 #include "Movement.h"
 #include "Config.h"
 #include "Theme.h"
@@ -13,6 +14,10 @@ namespace Gui {
 	namespace Menu {
 		std::string Movement::GetName() const {
 			return "Movement";
+		}
+
+		const char* Movement::GetItem() const {
+			return ICON_FA_BOLT;
 		}
 
 		void Movement::Draw() {
