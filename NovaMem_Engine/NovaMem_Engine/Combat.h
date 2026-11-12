@@ -8,6 +8,8 @@ namespace Gui {
 	namespace Menu {
 		class Combat : public Menu {
 		public:
+			Combat();
+
 			virtual std::string GetName() const override;
 			virtual const char* GetItem() const override;
 

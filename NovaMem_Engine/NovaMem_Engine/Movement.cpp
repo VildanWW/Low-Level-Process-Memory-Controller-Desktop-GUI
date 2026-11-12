@@ -12,6 +12,10 @@ using namespace Core::Settings;
 
 namespace Gui {
 	namespace Menu {
+		Movement::Movement() {
+			subTabs = {"Bhop"};
+		}
+
 		std::string Movement::GetName() const {
 			return "Movement";
 		}
@@ -23,8 +27,6 @@ namespace Gui {
 		void Movement::Draw() {
 			
 			ImVec2 screenSize = ImGui::GetIO().DisplaySize;
-
-			std::vector<std::string> subTabs{ "Bhop" };
 
 			ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::ChildBg);
 			ImGui::BeginChild("Movement", ImVec2(screenSize.x * 0.08f, 0), true);

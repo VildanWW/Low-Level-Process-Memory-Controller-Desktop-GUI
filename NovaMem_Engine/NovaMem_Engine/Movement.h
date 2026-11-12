@@ -7,6 +7,8 @@ namespace Gui {
 	namespace Menu {
 		class Movement : public Menu {
 		public:
+			Movement();
+
 			virtual std::string GetName() const override;
 			virtual const char* GetItem() const override;
 			virtual void Draw() override;

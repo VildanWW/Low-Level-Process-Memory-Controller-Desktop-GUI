@@ -7,6 +7,8 @@ namespace Gui {
 	namespace Menu {
 		class Visuals : public Menu {
 		public:
+			Visuals();
+
 			virtual std::string GetName() const override;
 			virtual const char* GetItem() const override;
 

@@ -10,7 +10,11 @@
 
 namespace Gui {
 	namespace Menu {
-		std::string Combat::GetName() const {
+        Combat::Combat() {
+            subTabs = {"Aimbot", "Ragebot", "NoRecoil"};
+        }
+
+        std::string Combat::GetName() const {
 			return "Combat";
 		}
 
@@ -20,7 +24,6 @@ namespace Gui {
 
         void Combat::Draw() {
             ImVec2 screenSize = ImGui::GetIO().DisplaySize;
-            std::vector<std::string> subTabs{ "Aimbot", "Ragebot", "NoRecoil" };
 
             ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::ChildBg);
 
