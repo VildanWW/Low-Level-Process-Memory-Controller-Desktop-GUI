@@ -1,16 +1,15 @@
 ﻿#include "pch.h"
 
-#include <memory>
 #include <imgui_impl_opengl2.h>
 #include <imgui_impl_win32.h>
+#include <Windows.h>
 
-#include "IconsFontAwesome5.h"
+#include "imgui.h"
 #include "Hooks.h"
 #include "Offsets.h"
 #include "MinHook.h"
 #include "EventBus.h"
 #include "MenuManager.h"
-#include "Tabs.h"
 #include "Config.h"
 #include "FontSerializer.h"
 

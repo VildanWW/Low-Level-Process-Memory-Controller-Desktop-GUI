@@ -2,7 +2,6 @@
 #include <vector>
 #include <memory>
 
-#include "MenuManager.h"
 #include "ImGui.h"
 
 namespace Gui {
@@ -22,7 +21,8 @@ namespace Gui {
 			void DrawHeader(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height);
 			void DrawFooter(ImDrawList* drawList, ImVec2 windowPos, ImVec2 windowSize, float height);
 		public:
-			MenuManager() = default;
+			MenuManager();
+			~MenuManager();
 
 			void AddTab(std::unique_ptr<Menu> upTab);
 			void DrawMainWindow();

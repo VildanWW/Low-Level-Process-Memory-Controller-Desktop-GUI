@@ -1,11 +1,12 @@
 ﻿#include "pch.h"
 
 #include <string>
+#include <vector>
 
 #include "IconsFontAwesome5.h"
 #include "Misc.h"
-#include "Config.h"
 #include "Theme.h"
+#include "imgui.h"
 
 namespace Gui {
 	namespace Menu {

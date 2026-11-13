@@ -9,6 +9,10 @@
 
 namespace Gui {
 	namespace Menu {
+        MenuManager::MenuManager() = default;
+
+        MenuManager::~MenuManager() = default;
+
         void MenuManager::AddTab(std::unique_ptr<Menu> upTab) {
             tabs.push_back(std::move(upTab));
         }

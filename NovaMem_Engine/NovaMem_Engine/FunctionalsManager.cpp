@@ -1,5 +1,8 @@
 ﻿#include "pch.h"
 
+#include <memory>
+#include <vector>
+
 #include "FunctionalsManager.h"
 #include "BaseFunctional.h"
 #include "Bhop.h"

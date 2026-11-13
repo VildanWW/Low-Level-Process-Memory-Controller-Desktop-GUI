@@ -1,4 +1,7 @@
 ﻿#pragma once
+
+#include <cstdint>
+
 #include "Hotkeys.h"
 
 namespace Core {
@@ -7,7 +10,7 @@ namespace Core {
 
 		constexpr uintptr_t jumpAddress = 0x1E94C0;
 
-		inline int* airAddress = 0;
+		inline int* airAddress = nullptr;
 		inline uintptr_t clientBase = 0;
 		inline uintptr_t hwBase = 0;
 		inline uintptr_t opengl32 = 0;

@@ -1,7 +1,5 @@
 ﻿#pragma once
 
-#include "string"
-
 namespace Core {
 	namespace Utils {
 		class JsonSerializer {

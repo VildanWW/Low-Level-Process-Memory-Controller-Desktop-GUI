@@ -4,6 +4,7 @@
 
 #include "AntiSmoke.h"
 #include "Config.h"
+#include "EventBus.h"
 
 namespace Core {
 	namespace Functionals {

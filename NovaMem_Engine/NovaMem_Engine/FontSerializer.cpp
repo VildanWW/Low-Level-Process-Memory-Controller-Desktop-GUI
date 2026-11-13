@@ -2,10 +2,12 @@
 
 #include <filesystem>
 #include <spdlog/spdlog.h> 
+#include <Windows.h>
 
 #include "FontSerializer.h"
 #include "imgui.h"
 #include "IconsFontAwesome5.h"
+
 namespace Gui {
 	namespace Fonts {
 		void FontInitialize() {

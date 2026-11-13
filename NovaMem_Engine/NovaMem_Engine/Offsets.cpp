@@ -1,5 +1,8 @@
 ﻿#include "pch.h"
 
+#include <Windows.h>
+#include <cstdint>
+
 #include "Offsets.h"
 
 namespace Core {

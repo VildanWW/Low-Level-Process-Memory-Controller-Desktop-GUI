@@ -2,13 +2,11 @@
 
 #include <string>
 #include <imgui.h>
+#include <vector>
 
 #include "IconsFontAwesome5.h"
 #include "Movement.h"
-#include "Config.h"
 #include "Theme.h"
-
-using namespace Core::Settings;
 
 namespace Gui {
 	namespace Menu {

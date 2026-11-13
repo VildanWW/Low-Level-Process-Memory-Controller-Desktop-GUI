@@ -1,9 +1,11 @@
 ﻿#include "pch.h"
 
+#include <Windows.h>
+
 #include "Bhop.h"
-#include "Hooks.h"
 #include "Offsets.h"
 #include "Config.h"
+#include "EventBus.h"
 
 namespace Core {
     namespace Functionals {
