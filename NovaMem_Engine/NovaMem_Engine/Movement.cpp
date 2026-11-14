@@ -10,9 +10,7 @@
 
 namespace Gui {
 	namespace Menu {
-		Movement::Movement() {
-			subTabs = {"Bhop"};
-		}
+		Movement::Movement() {}
 
 		std::string Movement::GetName() const {
 			return "Movement";
@@ -24,20 +22,6 @@ namespace Gui {
 
 		void Movement::Draw() {
 			
-			ImVec2 screenSize = ImGui::GetIO().DisplaySize;
-
-			ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::ChildBg);
-			ImGui::BeginChild("Movement", ImVec2(screenSize.x * 0.08f, 0), true);
-			
-			for (int i = 0; i < subTabs.size(); i++) {
-				bool isSelected = (currentTab == i);
-				if (ImGui::Selectable(subTabs[i].c_str(), isSelected)) {
-					currentTab = i;
-				}
-			}
-
-			ImGui::EndChild();
-			ImGui::PopStyleColor();
 		}
 	}
 }

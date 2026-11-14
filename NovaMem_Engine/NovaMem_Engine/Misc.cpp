@@ -10,9 +10,7 @@
 
 namespace Gui {
 	namespace Menu {
-		Misc::Misc() {
-			subTabs = {};
-		}
+		Misc::Misc() {}
 
 		std::string Misc::GetName() const {
 			return "Misc";
@@ -23,19 +21,7 @@ namespace Gui {
 		}
 
 		void Misc::Draw() {
-			ImVec2 screenSize = ImGui::GetIO().DisplaySize;
-
-			ImGui::PushStyleColor(ImGuiCol_ChildBg, Palette::ChildBg);
-			ImGui::BeginChild("Misc", ImVec2(screenSize.x * 0.08f, 0), true);
-
-			for (int i = 0; i < subTabs.size(); i++) {
-				bool isSelected = (currentTab == i);
-				if (ImGui::Selectable(subTabs[i].c_str(), isSelected)) {
-					currentTab = i;
-				}
-			}
-			ImGui::EndChild();
-			ImGui::PopStyleColor();
+			
 		}
 	}
 }

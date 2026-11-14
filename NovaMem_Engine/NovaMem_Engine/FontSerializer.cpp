@@ -7,6 +7,7 @@
 #include "FontSerializer.h"
 #include "imgui.h"
 #include "IconsFontAwesome5.h"
+#include "GuiAssets.h"
 
 namespace Gui {
 	namespace Fonts {
@@ -31,9 +32,7 @@ namespace Gui {
 			char dllPath[MAX_PATH];
 			HMODULE hModule = NULL;
 
-			GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
-							   GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-							   (LPCSTR)&FontInitialize, &hModule);
+			GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (LPCSTR)&FontInitialize, &hModule);
 			GetModuleFileNameA(hModule, dllPath, MAX_PATH);
 
 			std::filesystem::path p(dllPath);
@@ -49,7 +48,7 @@ namespace Gui {
 				iconsConfig.PixelSnapH = true;
 				iconsConfig.GlyphMinAdvanceX = calculatedFontSize;
 				
-				io.Fonts->AddFontFromFileTTF(fullPathTTF.string().c_str(), calculatedFontSize, &iconsConfig, iconsRanges);
+				logoFont = io.Fonts->AddFontFromFileTTF(fullPathTTF.string().c_str(), calculatedFontSize, &iconsConfig, iconsRanges);
 				spdlog::info("FontAwesome (fa-solid-900.ttf) successfully loaded.");
 			}
 			else {
@@ -62,7 +61,7 @@ namespace Gui {
 				
 				iconsWeapons.PixelSnapH = true;
 
-				io.Fonts->AddFontFromFileTTF(fullPathWeaponsTTF.string().c_str(), calculatedFontSize, &iconsWeapons, iconsRanges);
+				weaponFont = io.Fonts->AddFontFromFileTTF(fullPathWeaponsTTF.string().c_str(), calculatedFontSize, &iconsWeapons, iconsRanges);
 				spdlog::info("IconsWeapons (csgo_icons.ttf) successfully loaded.");
 			}
 			else {

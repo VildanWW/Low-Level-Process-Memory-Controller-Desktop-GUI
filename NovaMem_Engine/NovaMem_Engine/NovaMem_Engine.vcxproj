@@ -157,6 +157,7 @@
     <ClInclude Include="EventBus.h" />
     <ClInclude Include="FontSerializer.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GuiAssets.h" />
     <ClInclude Include="Hooks.h" />
     <ClInclude Include="Hotkeys.h" />
     <ClInclude Include="Gui.h" />

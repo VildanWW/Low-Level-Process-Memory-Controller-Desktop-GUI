@@ -6,6 +6,7 @@
 #include "Config.h"
 #include "Theme.h"
 #include "IconsFontAwesome5.h"
+#include "GuiAssets.h"
 
 namespace Gui {
 	namespace Menu {
@@ -66,7 +67,7 @@ namespace Gui {
             ImVec2 headerBottomRight = ImVec2(windowPos.x + windowSize.x, windowPos.y + height);
             float rounding = ImGui::GetStyle().WindowRounding;
             drawList->AddRectFilled(headerTopLeft, headerBottomRight, ImGui::ColorConvertFloat4ToU32(Palette::Accent), rounding, ImDrawFlags_RoundCornersTop);
-        
+
             float fontSize = ImGui::GetFontSize();
             float framePaddingY = ImGui::GetStyle().FramePadding.y;
 
@@ -76,12 +77,12 @@ namespace Gui {
             float buttonHeight = fontSize + framePaddingY * 2.0f;
             float buttonCenterY = windowPos.y + (height - buttonHeight) * 0.5f;
             ImGui::SetCursorScreenPos(ImVec2(windowPos.x + windowSize.x * 0.01f, textCenterY));
-
             ImGui::PushStyleColor(ImGuiCol_Text, Palette::Background);
             ImGui::Text("NovaMem Engine");
             ImGui::PopStyleColor();
 
             float logoWidth = ImGui::CalcTextSize("NovaMem Engine").x;
+
             float startPadding = windowSize.x * 0.01f;
             ImGui::SetCursorScreenPos(ImVec2(windowPos.x + startPadding + logoWidth + windowSize.x * 0.03f, buttonCenterY));
 
