@@ -154,6 +154,7 @@
     <ClInclude Include="Bhop.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="ConfigTypes.h" />
     <ClInclude Include="EventBus.h" />
     <ClInclude Include="FontSerializer.h" />
     <ClInclude Include="framework.h" />
@@ -173,13 +174,17 @@
     <ClInclude Include="JsonSerializer.h" />
     <ClInclude Include="MenuManager.h" />
     <ClInclude Include="Misc.h" />
+    <ClInclude Include="MiscConfig.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="MovementConfig.h" />
     <ClInclude Include="Offsets.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="FunctionalsManager.h" />
     <ClInclude Include="Tabs.h" />
     <ClInclude Include="Theme.h" />
     <ClInclude Include="Visuals.h" />
+    <ClInclude Include="CombatConfig.h" />
+    <ClInclude Include="VisualsConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AntiFlash.cpp" />

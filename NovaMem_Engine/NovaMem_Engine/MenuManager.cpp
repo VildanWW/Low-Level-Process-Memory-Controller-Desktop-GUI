@@ -101,14 +101,21 @@ namespace Gui {
                     activeTabId = i;
                 }
 
+                bool isHovered = ImGui::IsItemHovered();
+                bool isActive = (activeTabId == i);
+
+                ImVec4 itemColor = Palette::TextMuted;
+
+                if (isActive || isHovered) {
+                    itemColor = Palette::TextMain;
+                }
+
+                ImU32 colorU32 = ImGui::GetColorU32(itemColor);
                 float textY = cursorScreenPos.y + (buttonHeight - nameSize.y) * 0.5f;
 
-                ImU32 textColor = (activeTabId == i) ? ImGui::GetColorU32(Palette::Background) : ImGui::GetColorU32(Palette::TextMuted);
+                drawList->AddText(ImVec2(cursorScreenPos.x, textY), colorU32, nameTab.c_str());
 
-                drawList->AddText(ImVec2(cursorScreenPos.x, textY), textColor, nameTab.c_str());
-
-                ImU32 iconColor = ImGui::GetColorU32(ImVec4(Palette::ItemTabs));
-                drawList->AddText(ImVec2(cursorScreenPos.x + nameSize.x + spacing, textY), iconColor, itemTab);
+                drawList->AddText(ImVec2(cursorScreenPos.x + nameSize.x + spacing, textY), colorU32, itemTab);
 
                 if (i < tabs.size() - 1) {
                     float nextX = ImGui::GetItemRectMax().x + windowSize.x * 0.015f;

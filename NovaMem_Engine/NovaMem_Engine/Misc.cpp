@@ -20,8 +20,6 @@ namespace Gui {
 			return ICON_FA_BOX_OPEN;
 		}
 
-		void Misc::Draw() {
-			
-		}
+		void Misc::Draw() {}
 	}
 }

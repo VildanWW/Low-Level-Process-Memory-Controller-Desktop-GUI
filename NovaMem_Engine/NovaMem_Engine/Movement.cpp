@@ -20,8 +20,6 @@ namespace Gui {
 			return ICON_FA_BOLT;
 		}
 
-		void Movement::Draw() {
-			
-		}
+		void Movement::Draw() {}
 	}
 }

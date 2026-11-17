@@ -25,7 +25,7 @@ namespace Core {
 		}
 
 		bool AntiSmoke::HandleGlBeginAntiSmoke(unsigned int mode) {
-			if (Settings::configSettings.visuals.antiSmoke.running && mode == GL_QUADS) {
+			if (Settings::configSettings.visuals.world.noSmoke.running && mode == GL_QUADS) {
 				float curcol[4];
 				glGetFloatv(GL_CURRENT_COLOR, curcol);
 
@@ -39,7 +39,7 @@ namespace Core {
 		}
 
 		bool AntiSmoke::HandleGlVertexAntiSmoke(float x, float y, float z) {
-			if (Settings::configSettings.visuals.antiSmoke.running && bIsSmokeCurrentQuad) { return true; }
+			if (Settings::configSettings.visuals.world.noSmoke.running && bIsSmokeCurrentQuad) { return true; }
 			return false;
 		}
 	}

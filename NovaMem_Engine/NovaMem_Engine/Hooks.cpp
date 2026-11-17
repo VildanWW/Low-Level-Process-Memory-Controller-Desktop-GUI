@@ -57,7 +57,7 @@ namespace Core {
 			bool allowMessage = true;
 
 			for (const auto& [token, callback] : Events::EventBus::screenList) {
-				if (!callback(param_1, param_2, param_3)) {
+				if (callback(param_1, param_2, param_3)) {
 					allowMessage = false;
 				}
 			}

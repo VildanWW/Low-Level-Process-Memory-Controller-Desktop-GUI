@@ -39,7 +39,7 @@ namespace Core {
 
 			try {
 				json jsonData = json::parse(data);
-				Settings::configSettings = jsonData.get<Settings::ConfigSettings>();
+				//Settings::configSettings = jsonData.get<Settings::ConfigSettings>();
 			}
 			catch (const json::exception& ex) {
 				LoadToFile();
@@ -52,7 +52,8 @@ namespace Core {
 
 			if (!ofst.is_open()) { return; }
 
-			json jsonData = Settings::configSettings;
+			//json jsonData = Settings::configSettings; 
+			json jsonData = json::object();
 			std::string rawData = jsonData.dump(); // 4 this is standard size for space in json file
 
 			char key = 0x5C;

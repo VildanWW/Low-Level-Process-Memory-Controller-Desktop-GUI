@@ -20,8 +20,6 @@ namespace Gui {
 			return ICON_FA_EYE;
 		}
 
-		void Visuals::Draw() {
-			
-		}
+		void Visuals::Draw() {}
 	}
 }

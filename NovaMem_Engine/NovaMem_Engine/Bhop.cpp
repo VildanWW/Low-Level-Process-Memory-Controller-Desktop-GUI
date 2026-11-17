@@ -22,7 +22,7 @@ namespace Core {
         unsigned int Bhop::HandleBhopMove(char param_1, unsigned int value) {
             if (Offsets::airAddress == nullptr) return value;
 
-            if ((GetAsyncKeyState(Offsets::bhopKey) & 0x8000) && Settings::configSettings.movement.bhop.running) {
+            if ((GetAsyncKeyState(Offsets::bhopKey) & 0x8000) && Settings::configSettings.movement.jumping.bunnyHop.running) {
                 if (*Offsets::airAddress == 0)
                     value |= Offsets::jumpFlag;
                 else

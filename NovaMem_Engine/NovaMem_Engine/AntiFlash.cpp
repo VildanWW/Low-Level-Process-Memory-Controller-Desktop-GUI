@@ -16,7 +16,7 @@ namespace Core {
 		}
 
 		bool AntiFlash::HandleAntiFlashScreen(const char* param_1, int param_2, const unsigned char* param_3) {
-			if (Settings::configSettings.visuals.antiFlash.running) {
+			if (Settings::configSettings.visuals.world.noFlash.running) {
 				return true;
 			}
 			return false;
