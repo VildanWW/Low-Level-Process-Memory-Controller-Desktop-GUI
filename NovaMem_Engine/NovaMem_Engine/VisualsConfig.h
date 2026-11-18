@@ -86,7 +86,61 @@ namespace Core {
 				struct NoSmoke {
 					bool running = true;
 				} noSmoke;
+
+				struct NoVisualRecoil {
+					bool running = false;
+				} noVisualRecoil;
 			} world;
+
+			struct Models {
+				struct EnemyChams {
+					bool running = false;
+				} enemyChams;
+
+				struct Material {
+					bool running = false;
+				} material;
+
+				struct BacktrackChams {
+					bool running = false;
+				} backtrackChams;
+
+				struct LocalHands {
+					bool running = false;
+				} localHands;	
+
+				struct LocalWeapon {
+					bool running = false;
+				} localWeapon;
+
+				struct GlowOutline {
+					bool running = false;
+				} glowOutline;
+			};
+
+			struct View {
+				float fovChanger = -1.0f;
+
+				struct ViewModel {
+					bool running = false;
+				} viewModel;
+
+				struct ThirdPerson {
+					bool running = false;
+				} thirdPerson;
+
+				struct SniperCrosshair {
+					bool running = false;
+				} sniperCrosshair;
+
+				struct RecoilCrosshair {
+					bool running = false;
+				} recoilCrosshair;
+
+				struct DisableScopeOverlay {
+					bool running = false;
+				} disableScopeOverlay;
+			};
 		};
 	}
 }
