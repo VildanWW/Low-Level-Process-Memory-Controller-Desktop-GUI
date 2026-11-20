@@ -80,7 +80,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)ImGui\;$(ProjectDir)Spdlog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Configs;$(ProjectDir)Core;$(ProjectDir)Features;$(ProjectDir)Gui;$(ProjectDir)Serializers;$(ProjectDir)Spdlog;$(ProjectDir)ImGui</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -102,7 +102,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)ImGui\;$(ProjectDir)Spdlog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Configs;$(ProjectDir)Core;$(ProjectDir)Features;$(ProjectDir)Gui;$(ProjectDir)Serializers;$(ProjectDir)Spdlog;$(ProjectDir)ImGui</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -122,6 +122,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp23</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Configs;$(ProjectDir)Core;$(ProjectDir)Features;$(ProjectDir)Gui;$(ProjectDir)Serializers;$(ProjectDir)Spdlog;$(ProjectDir)ImGui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,6 +141,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp23</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Configs;$(ProjectDir)Core;$(ProjectDir)Features;$(ProjectDir)Gui;$(ProjectDir)Serializers;$(ProjectDir)Spdlog;$(ProjectDir)ImGui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -148,21 +150,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AntiFlash.h" />
-    <ClInclude Include="AntiSmoke.h" />
-    <ClInclude Include="BaseFunctional.h" />
-    <ClInclude Include="Bhop.h" />
-    <ClInclude Include="Combat.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="ConfigTypes.h" />
-    <ClInclude Include="EventBus.h" />
-    <ClInclude Include="FontSerializer.h" />
+    <ClInclude Include="Configs\CombatConfig.h" />
+    <ClInclude Include="Configs\Config.h" />
+    <ClInclude Include="Configs\ConfigTypes.h" />
+    <ClInclude Include="Configs\MiscConfig.h" />
+    <ClInclude Include="Configs\MovementConfig.h" />
+    <ClInclude Include="Configs\VisualsConfig.h" />
+    <ClInclude Include="Core\BaseFunctional.h" />
+    <ClInclude Include="Core\EventBus.h" />
+    <ClInclude Include="Core\FunctionalsManager.h" />
+    <ClInclude Include="Core\Hooks.h" />
+    <ClInclude Include="Core\Hotkeys.h" />
+    <ClInclude Include="Core\Offsets.h" />
+    <ClInclude Include="Features\AntiFlash.h" />
+    <ClInclude Include="Features\AntiSmoke.h" />
+    <ClInclude Include="Features\Bhop.h" />
+    <ClInclude Include="Features\Combat.h" />
+    <ClInclude Include="Features\Misc.h" />
+    <ClInclude Include="Features\Movement.h" />
+    <ClInclude Include="Features\Visuals.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="GuiAssets.h" />
-    <ClInclude Include="Hooks.h" />
-    <ClInclude Include="Hotkeys.h" />
-    <ClInclude Include="Gui.h" />
-    <ClInclude Include="IconsFontAwesome5.h" />
+    <ClInclude Include="Gui\Gui.h" />
+    <ClInclude Include="Gui\GuiAssets.h" />
+    <ClInclude Include="Gui\IconsFontAwesome5.h" />
+    <ClInclude Include="Gui\MenuManager.h" />
+    <ClInclude Include="Gui\Tabs.h" />
+    <ClInclude Include="Gui\Theme.h" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
     <ClInclude Include="ImGui\imgui_impl_opengl2.h" />
@@ -171,30 +184,24 @@
     <ClInclude Include="ImGui\imstb_rectpack.h" />
     <ClInclude Include="ImGui\imstb_textedit.h" />
     <ClInclude Include="ImGui\imstb_truetype.h" />
-    <ClInclude Include="JsonSerializer.h" />
-    <ClInclude Include="MenuManager.h" />
-    <ClInclude Include="Misc.h" />
-    <ClInclude Include="MiscConfig.h" />
-    <ClInclude Include="Movement.h" />
-    <ClInclude Include="MovementConfig.h" />
-    <ClInclude Include="Offsets.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="FunctionalsManager.h" />
-    <ClInclude Include="Tabs.h" />
-    <ClInclude Include="Theme.h" />
-    <ClInclude Include="Visuals.h" />
-    <ClInclude Include="CombatConfig.h" />
-    <ClInclude Include="VisualsConfig.h" />
+    <ClInclude Include="Serializers\FontSerializer.h" />
+    <ClInclude Include="Serializers\JsonSerializer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AntiFlash.cpp" />
-    <ClCompile Include="AntiSmoke.cpp" />
-    <ClCompile Include="Bhop.cpp" />
-    <ClCompile Include="Combat.cpp" />
+    <ClCompile Include="Core\EventBus.cpp" />
+    <ClCompile Include="Core\FunctionalsManager.cpp" />
+    <ClCompile Include="Core\Hooks.cpp" />
+    <ClCompile Include="Core\Offsets.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="EventBus.cpp" />
-    <ClCompile Include="FontSerializer.cpp" />
-    <ClCompile Include="Hooks.cpp" />
+    <ClCompile Include="Features\AntiFlash.cpp" />
+    <ClCompile Include="Features\AntiSmoke.cpp" />
+    <ClCompile Include="Features\Bhop.cpp" />
+    <ClCompile Include="Features\Combat.cpp" />
+    <ClCompile Include="Features\Misc.cpp" />
+    <ClCompile Include="Features\Movement.cpp" />
+    <ClCompile Include="Features\Visuals.cpp" />
+    <ClCompile Include="Gui\MenuManager.cpp" />
     <ClCompile Include="ImGui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -223,19 +230,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="JsonSerializer.cpp" />
-    <ClCompile Include="MenuManager.cpp" />
-    <ClCompile Include="Misc.cpp" />
-    <ClCompile Include="Movement.cpp" />
-    <ClCompile Include="Offsets.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="FunctionalsManager.cpp" />
-    <ClCompile Include="Visuals.cpp" />
+    <ClCompile Include="Serializers\FontSerializer.cpp" />
+    <ClCompile Include="Serializers\JsonSerializer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

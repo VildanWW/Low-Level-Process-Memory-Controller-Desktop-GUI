@@ -116,7 +116,7 @@ namespace Core {
 				struct GlowOutline {
 					bool running = false;
 				} glowOutline;
-			};
+			} models;
 
 			struct View {
 				float fovChanger = -1.0f;
@@ -140,7 +140,7 @@ namespace Core {
 				struct DisableScopeOverlay {
 					bool running = false;
 				} disableScopeOverlay;
-			};
+			} view;
 		};
 	}
 }
