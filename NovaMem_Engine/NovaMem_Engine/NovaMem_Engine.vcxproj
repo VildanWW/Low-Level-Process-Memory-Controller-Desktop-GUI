@@ -176,6 +176,7 @@
     <ClInclude Include="Gui\MenuManager.h" />
     <ClInclude Include="Gui\Tabs.h" />
     <ClInclude Include="Gui\Theme.h" />
+    <ClInclude Include="Gui\Widgets.h" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
     <ClInclude Include="ImGui\imgui_impl_opengl2.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="Features\Movement.cpp" />
     <ClCompile Include="Features\Visuals.cpp" />
     <ClCompile Include="Gui\MenuManager.cpp" />
+    <ClCompile Include="Gui\Widgets.cpp" />
     <ClCompile Include="ImGui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
