@@ -29,7 +29,7 @@ namespace Gui {
 
 			ImGui::Columns(3, "MovementGrid", false);
 
-			BeginCard({ "Jumping", "jumping" });
+			BeginCard({ "Jumping" });
 			FeatureToggle({ "BunnyHop", "Auto-jump on landing", &cfg.movement.jumping.bunnyHop.running});
 			FeatureToggle({ "AutoStrafe", "Strafe to gain air speed", &cfg.movement.jumping.autoStrafe.running });
 			FeatureToggle({ "GroundStrafe", "Strafe assist on ground", &cfg.movement.jumping.groundStrafe.running });
@@ -38,7 +38,7 @@ namespace Gui {
 
 			ImGui::NextColumn();
 
-			BeginCard({ "Exploits", "exploits"});
+			BeginCard({ "Exploits" });
 			FeatureToggle({ "JumpBug", "Negate fall damage on land", &cfg.movement.exploits.jumpBug.running });
 			FeatureToggle({ "EdgeBug","Survive lethal drops on edge", &cfg.movement.exploits.edgeBug.running });
 			FeatureToggle({ "EdgeJump", "Auto-jump at ledge edge", &cfg.movement.exploits.edgeJump.running });
@@ -47,7 +47,7 @@ namespace Gui {
 
 			ImGui::NextColumn();
 
-			BeginCard({"Control", "control"});
+			BeginCard({"Control" });
 			FeatureToggle({ "FastStop", "Instant velocity halt", &cfg.movement.control.fastStop.running });
 			FeatureToggle({ "AutoPeek", "Return to origin after shot", &cfg.movement.control.autoPeek.running });
 			FeatureToggle({ "SlowWalk", "Reduced movement speed", &cfg.movement.control.slowWalk.running });

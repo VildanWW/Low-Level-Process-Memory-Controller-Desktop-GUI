@@ -3,7 +3,6 @@
 namespace Gui {
 	struct CardInfo {
 		const char* title = nullptr;
-		const char* tag = nullptr;
 		float height = 0.0f;
 	};
 

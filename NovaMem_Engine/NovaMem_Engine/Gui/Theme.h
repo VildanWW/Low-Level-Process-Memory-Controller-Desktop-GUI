@@ -21,5 +21,10 @@ namespace Gui {
 		static inline const ImVec4 BtnActive = ImVec4(1.000f, 1.000f, 1.000f, 0.20f); // #FFFFFF with 20% alpha (White overlay on click)
 
 		static inline const ImVec4 ItemTabs = ImVec4(0.5255f, 0.0000f, 0.9137f, 1.0000f); // #8600E9 Light violet
+	
+		// Cards & Borders
+		static inline const ImVec4 CardBg = ImVec4(0.165f, 0.094f, 0.227f, 1.00f); // #2A183A (Dark plum, card background)
+		static inline const ImVec4 Border = ImVec4(0.694f, 0.549f, 0.803f, 0.30f); // #B18CCD with 30% alpha (Subtle lavender card border)
+		static inline const ImVec4 BorderHovered = ImVec4(0.694f, 0.549f, 0.803f, 0.75f); // #B18CCD with 75% alpha (Bright lavender border on hover)
 	};
 }
