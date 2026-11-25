@@ -28,7 +28,7 @@ namespace Gui {
 			auto& cfg = Core::Settings::configSettings;
 
 			ImGui::Columns(3, "MovementGrid", false);
-
+			
 			BeginCard({ "Jumping" });
 			FeatureToggle({ "BunnyHop", "Auto-jump on landing", &cfg.movement.jumping.bunnyHop.running});
 			FeatureToggle({ "AutoStrafe", "Strafe to gain air speed", &cfg.movement.jumping.autoStrafe.running });
